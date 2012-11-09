@@ -172,7 +172,6 @@ public class LeagueCreator {
 			// in error case (load invalid lgu file), may be more
 			delNation(npv.getNation(0), npv);
 		}
-		// free league
 	}
 
 	boolean save(League league, boolean gam) {
