@@ -1,0 +1,29 @@
+Todo Hockeymanager
+==================
+
+Known issues:
+- schönere Gestaltung GUI
+- Show hourglass at long ops
+- No transfers allowed during playoffs!
+- Timeout stärkt energie der players
+- shoot out: improve goals calculation after overtime (show scorers and saves)
+- Improve player AI and team AI (See todo in code)
+- Players propose prolongations of their contracts
+- do some profiling (memory usage)
+- do some code formatting
+- fix checkstyle warnings
+
+Known bugs:
+- JavaFX will zuerst .bss file laden (callstack), bevor .css. d.h. sollte mit "javafxpackager -createbss" die css-files konvertieren!
+- Manager.modified flag: yes/no dlg, wenn das bestehende Game nicht gesaved ist
+- Replacement of players in penalty box with non penalty players is not ok !
+- 4th row is never on ice completely!
+- Goalie: don’t count „match played“, count „minutes played“ for calculating GAA
+- Fix problem: If team full, no swap possible between farm and 1st team
+- Transfer Dialog: Managed team players don’t appear in the list
+- Pending “next season” transfer offers must become “immediately” at new season
+- LineUp AI: don’t take two foreign goalies into lineup !
+- LineUp AI: foreigners chosen according short on position !
+- LineUp AI: double engagement of same player in diff. blocks
+- LineUp AI: also during match (don’t take new foreigners during match)
+- LineUp GUI during match: don’t take new foreigners
