@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ This file is part of Al's Hockey Manager
+ Copyright (C) 1998-2012 Albin Meyer
+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<?language javascript?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml" fx:controller="ch.hockman.gui.Match">
+  <children>
+    <VBox id="VBox" alignment="CENTER" layoutX="3.0" layoutY="2.0" prefHeight="598.0" spacing="5.0">
+      <children>
+        <HBox prefHeight="538.0" prefWidth="797.0">
+          <children>
+            <VBox minWidth="199.0" prefHeight="544.0" prefWidth="242.0">
+              <children>
+                <Label fx:id="stadionLbl" text="Label" />
+                <Label fx:id="spectatorsLbl" text="Label" />
+                <ImageView fx:id="iceFieldImg" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                <Label text="Scorer" />
+                <TextArea fx:id="scorerList" prefHeight="330.0" prefWidth="199.0" />
+              </children>
+            </VBox>
+            <VBox prefHeight="544.0" prefWidth="329.0" spacing="20.0">
+              <children>
+                <VBox id="VBox" alignment="CENTER" prefHeight="145.0" spacing="5.0">
+                  <children>
+                    <Label text="Totomat (other results)" />
+                    <ListView fx:id="totomatList" prefHeight="100.0" prefWidth="209.0" />
+                  </children>
+                </VBox>
+                <VBox id="VBox" alignment="CENTER" spacing="5.0">
+                  <children>
+                    <Label text="On Ice" />
+                    <HBox alignment="CENTER" prefHeight="150.0" prefWidth="329.0" spacing="20.0">
+                      <children>
+                        <ListView fx:id="homeOnIceList" prefHeight="126.0" prefWidth="135.0" />
+                        <ListView fx:id="awayOnIceList" prefHeight="126.0" prefWidth="135.0" />
+                      </children>
+                    </HBox>
+                  </children>
+                </VBox>
+                <VBox id="VBox" alignment="CENTER" spacing="5.0">
+                  <children>
+                    <Label text="Penalty Box" />
+                    <HBox alignment="CENTER" prefHeight="67.0" prefWidth="209.0" spacing="20.0">
+                      <children>
+                        <ListView fx:id="homePenList" prefHeight="67.0" prefWidth="135.0" />
+                        <ListView fx:id="awayPenList" prefHeight="67.0" prefWidth="135.0" />
+                      </children>
+                    </HBox>
+                  </children>
+                </VBox>
+                <VBox id="VBox" alignment="CENTER" prefHeight="54.0" prefWidth="329.0" spacing="5.0">
+                  <children>
+                    <Label text="Injuries" />
+                    <HBox alignment="CENTER" prefHeight="67.0" prefWidth="209.0" spacing="20.0">
+                      <children>
+                        <ListView fx:id="homeInjList" prefHeight="67.0" prefWidth="135.0" />
+                        <ListView fx:id="awayInjList" prefHeight="67.0" prefWidth="135.0" />
+                      </children>
+                    </HBox>
+                  </children>
+                </VBox>
+              </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="397.0" prefWidth="182.0" spacing="80.0">
+              <children>
+                <VBox id="VBox" alignment="CENTER" spacing="5.0">
+                  <children>
+                    <Label fx:id="oponentsLbl" text="Label" />
+                    <Label fx:id="resultLbl" text="Label">
+                      <font>
+                        <Font size="30.0" />
+                      </font>
+                    </Label>
+                    <HBox id="HBox" alignment="CENTER" spacing="5.0">
+                      <children>
+                        <Label text="Time" />
+                        <Label fx:id="timeLbl" text="Label">
+                          <font>
+                            <Font size="20.0" />
+                          </font>
+                        </Label>
+                      </children>
+                    </HBox>
+                    <HBox id="HBox" alignment="CENTER" spacing="5.0">
+                      <children>
+                        <Label text="Shoots" />
+                        <Label fx:id="shootsLbl" text="Label">
+                          <font>
+                            <Font size="18.0" />
+                          </font>
+                        </Label>
+                      </children>
+                    </HBox>
+                  </children>
+                </VBox>
+                <VBox id="VBox" alignment="CENTER" spacing="5.0">
+                  <children>
+                    <Button fx:id="myLineUpBtn" mnemonicParsing="false" onAction="#myLineUpAction" text="My Line Up" />
+                    <Button fx:id="tacticsBtn" mnemonicParsing="false" onAction="#tacticsAction" text="Tactics" />
+                    <Button fx:id="timeoutBtn" mnemonicParsing="false" onAction="#timeoutAction" text="Timeout" />
+                  </children>
+                </VBox>
+                <Button fx:id="opponentBtn" mnemonicParsing="false" onAction="#opponentLineUpAction" text="Opponent Line Up" />
+                <Button fx:id="okBtn" mnemonicParsing="false" onAction="#ok" text="Ok" />
+              </children>
+            </VBox>
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="67.0" prefWidth="797.0" spacing="50.0">
+          <children>
+            <Label fx:id="eventLbl" text="Label" />
+            <Button fx:id="continueBtn" mnemonicParsing="false" onAction="#continueAction" text="Continue" />
+          </children>
+        </HBox>
+      </children>
+    </VBox>
+  </children>
+</AnchorPane>

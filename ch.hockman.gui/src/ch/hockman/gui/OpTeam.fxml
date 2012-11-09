@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ This file is part of Al's Hockey Manager
+ Copyright (C) 1998-2012 Albin Meyer
+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<?language javascript?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml" fx:controller="ch.hockman.gui.OpTeam">
+  <children>
+    <HBox alignment="CENTER" layoutX="3.0" layoutY="2.0" prefHeight="584.0" prefWidth="790.0" spacing="20.0">
+      <children>
+        <VBox prefHeight="584.0" prefWidth="430.0" spacing="10.0">
+          <children>
+            <Label fx:id="mainTeamLabel" text="Label" />
+            <ListView fx:id="mainTeam" prefHeight="383.0" prefWidth="411.0" />
+            <Label fx:id="farmTeamLabel" text="Label" />
+            <ListView fx:id="farmTeam" prefHeight="200.0" prefWidth="200.0" />
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="411.0" spacing="50.0">
+              <children>
+                <Button mnemonicParsing="false" onAction="#ok" text="Ok" />
+                <Button mnemonicParsing="false" onAction="#playerDetail" text="Player Detail" />
+              </children>
+            </HBox>
+            <HBox prefHeight="50.0" prefWidth="411.0" />
+          </children>
+        </VBox>
+        <VBox alignment="CENTER" prefHeight="584.0" prefWidth="280.0" spacing="50.0">
+          <children>
+            <ImageView fx:id="teamImg" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+            <VBox id="VBox" alignment="CENTER" spacing="20.0">
+              <children>
+                <Label text="Strength" />
+                <Label text="incl. Injuries, Energy and Motivation" />
+                <Label fx:id="totalStrengthLbl" text="Label" />
+              </children>
+            </VBox>
+            <VBox id="VBox" alignment="CENTER">
+              <children>
+                <Label text="Tactics" />
+                <HBox prefHeight="19.0" prefWidth="220.0" spacing="10.0">
+                  <children>
+                    <Label text="Game Play:" />
+                    <Label fx:id="gamePlayLbl" text="Label" />
+                  </children>
+                </HBox>
+                <HBox prefHeight="19.0" prefWidth="220.0" spacing="10.0">
+                  <children>
+                    <Label text="Effort:" />
+                    <Label fx:id="effortLbl" text="Label" />
+                  </children>
+                </HBox>
+                <HBox prefHeight="19.0" prefWidth="220.0" spacing="10.0">
+                  <children>
+                    <Label text="Defense:" />
+                    <Label fx:id="defenseLbl" text="Label" />
+                  </children>
+                </HBox>
+                <HBox prefHeight="19.0" prefWidth="220.0" spacing="10.0">
+                  <children>
+                    <Label text="Offense" />
+                    <Label fx:id="offenseLbl" text="Label" />
+                  </children>
+                </HBox>
+                <HBox prefHeight="19.0" prefWidth="220.0" spacing="10.0">
+                  <children>
+                    <Label text="Block Selection:" />
+                    <Label fx:id="blockSelLbl" text="Label" />
+                  </children>
+                </HBox>
+              </children>
+            </VBox>
+            <HBox prefHeight="19.0" prefWidth="220.0" spacing="10.0">
+              <children>
+                <Label text="Sponsoring:" />
+                <Label fx:id="sponsoringLbl" text="Label" />
+              </children>
+            </HBox>
+          </children>
+        </VBox>
+      </children>
+    </HBox>
+  </children>
+</AnchorPane>

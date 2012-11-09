@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ This file is part of Al's Hockey Manager
+ Copyright (C) 1998-2012 Albin Meyer
+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<?language javascript?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml" fx:controller="ch.hockman.gui.Tactics">
+  <children>
+    <HBox layoutX="3.0" layoutY="2.0" prefHeight="598.0" prefWidth="797.0">
+      <children>
+        <VBox prefHeight="397.0" prefWidth="411.0" spacing="30.0">
+          <children>
+            <Label text="Gameplay" />
+            <Group id="Group">
+              <children>
+                <RadioButton fx:id="offensiveRadio" mnemonicParsing="false" text="offensive">
+                  <toggleGroup>
+                    <ToggleGroup fx:id="gamePlay" />
+                  </toggleGroup>
+                </RadioButton>
+                <RadioButton fx:id="normalGameplayRadio" layoutY="18.0" mnemonicParsing="false" text="normal" toggleGroup="$gamePlay" />
+                <RadioButton fx:id="defensiveRadio" layoutY="36.0" mnemonicParsing="false" text="defensive" toggleGroup="$gamePlay" />
+              </children>
+            </Group>
+            <Label text="Effort" />
+            <Group id="Group">
+              <children>
+                <RadioButton fx:id="fullRadio" mnemonicParsing="false" text="Full">
+                  <toggleGroup>
+                    <ToggleGroup fx:id="effort" />
+                  </toggleGroup>
+                </RadioButton>
+                <RadioButton fx:id="normalEffortRadio" layoutY="18.0" mnemonicParsing="false" text="Normal" toggleGroup="$effort" />
+                <RadioButton fx:id="easyRadio" layoutY="36.0" mnemonicParsing="false" text="Easy" toggleGroup="$effort" />
+              </children>
+            </Group>
+            <Label text="Defense" />
+            <Group id="Group">
+              <children>
+                <RadioButton fx:id="zoneRadio" mnemonicParsing="false" text="Zone">
+                  <toggleGroup>
+                    <ToggleGroup fx:id="defense" />
+                  </toggleGroup>
+                </RadioButton>
+                <RadioButton fx:id="markRadio" layoutY="18.0" mnemonicParsing="false" text="Mark" toggleGroup="$defense" />
+              </children>
+            </Group>
+            <Label prefWidth="68.0" text="Offense" />
+            <Group id="Group">
+              <children>
+                <RadioButton fx:id="shootMoreRadio" mnemonicParsing="false" text="Shoot More">
+                  <toggleGroup>
+                    <ToggleGroup fx:id="offense" />
+                  </toggleGroup>
+                </RadioButton>
+                <RadioButton fx:id="passMoreRadio" layoutY="18.0" mnemonicParsing="false" text="Pass More" toggleGroup="$offense" />
+              </children>
+            </Group>
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="411.0">
+              <children>
+                <Button mnemonicParsing="false" onAction="#ok" text="Ok" />
+              </children>
+            </HBox>
+          </children>
+        </VBox>
+        <VBox prefHeight="598.0" prefWidth="314.0" spacing="30.0">
+          <children>
+            <Label text="Automatic Block Selection" />
+            <Group id="Group">
+              <children>
+                <RadioButton fx:id="strongerBlocksRadio" mnemonicParsing="false" text="">
+                  <toggleGroup>
+                    <ToggleGroup fx:id="blockSelection" />
+                  </toggleGroup>
+                </RadioButton>
+                <RadioButton fx:id="lessTiredRadio" layoutY="18.0" mnemonicParsing="false" text="" toggleGroup="$blockSelection" />
+                <RadioButton fx:id="sameBlockRadio" layoutY="36.0" mnemonicParsing="false" text="" toggleGroup="$blockSelection" />
+                <RadioButton fx:id="fixBlockRadio" layoutY="54.0" mnemonicParsing="false" text="" toggleGroup="$blockSelection" />
+              </children>
+            </Group>
+            <CheckBox fx:id="pullGoalieCheckBox" mnemonicParsing="false" onAction="#pullGoalie" text="" />
+          </children>
+        </VBox>
+      </children>
+    </HBox>
+  </children>
+</AnchorPane>

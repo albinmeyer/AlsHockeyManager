@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ This file is part of Al's Hockey Manager
+ Copyright (C) 1998-2012 Albin Meyer
+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<?language javascript?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml" fx:controller="ch.hockman.gui.PlayerDetails">
+  <children>
+    <HBox layoutX="3.0" layoutY="2.0" prefHeight="598.0" prefWidth="797.0">
+      <children>
+        <VBox prefHeight="598.0" prefWidth="286.0" spacing="30.0">
+          <children>
+            <ImageView fx:id="playerPic" fitHeight="196.0" fitWidth="261.3333389026493" pickOnBounds="true" preserveRatio="true" />
+            <HBox prefHeight="373.0" prefWidth="276.0">
+              <children>
+                <VBox prefHeight="373.0" prefWidth="85.0">
+                  <children>
+                    <Label fx:id="firstNameTxtLbl" text="First Name" />
+                    <Label fx:id="lastNameTxtLbl" text="Last Name" />
+                    <Label fx:id="birthdayTxtLbl" text="Birthday" />
+                    <Label fx:id="positionTxtLbl" text="Position" />
+                    <Label fx:id="numberTxtLbl" text="Number" />
+                    <Label fx:id="nationalityTxtLbl" text="Nationality" />
+                    <Label fx:id="heightTxtLbl" text="Height" />
+                    <Label fx:id="weightTxtLbl" text="Weight" />
+                    <Label fx:id="characterTxtLbl" text="Character" />
+                    <Label id="NatGamesLbl" fx:id="natGamesLbl" text="Label" />
+                  </children>
+                </VBox>
+                <VBox prefHeight="373.0" prefWidth="162.3333740234375">
+                  <children>
+                    <Label fx:id="firstNameLbl" text="Label" />
+                    <Label fx:id="lastNameLbl" text="Label" />
+                    <Label fx:id="birthdayLbl" text="Label" />
+                    <Label fx:id="positionLbl" text="Label" />
+                    <Label fx:id="numberLbl" text="Label" />
+                    <Label fx:id="nationalityLbl" text="Label" />
+                    <Label fx:id="heightLbl" text="Label" />
+                    <Label fx:id="weightLbl" text="Label" />
+                    <Label fx:id="characterLbl" text="Label" />
+                    <Label text="Games Nationalteam" />
+                  </children>
+                </VBox>
+              </children>
+            </HBox>
+          </children>
+        </VBox>
+        <VBox prefHeight="598.0" prefWidth="275.0" spacing="30.0">
+          <children>
+            <HBox prefHeight="178.0" prefWidth="265.0">
+              <children>
+                <VBox prefHeight="167.0" prefWidth="124.0">
+                  <children>
+                    <Label fx:id="energyTxtLbl" text="Energy" />
+                    <Label fx:id="formTxtLbl" text="Form" />
+                    <Label fx:id="shootingTxtLbl" text="Shooting" />
+                    <Label fx:id="staminaTxtLbl" text="Stamina" />
+                    <Label fx:id="skillTxtLbl" text="Skill" />
+                    <Label fx:id="passingTxtLbl" text="Passing" />
+                    <Label fx:id="powerTxtLbl" text="Power" />
+                    <Label fx:id="offenseTxtLbl" text="Offense" />
+                    <Label fx:id="defenseTxtLbl" text="Defense" />
+                    <Label fx:id="totalStrengthTxtLbl" text="Total Strength">
+                      <textFill>
+                        <Color blue="1.000" green="0.160" red="0.000" fx:id="x1" />
+                      </textFill>
+                    </Label>
+                  </children>
+                </VBox>
+                <VBox prefHeight="200.0" prefWidth="100.0">
+                  <children>
+                    <Label fx:id="energyLbl" text="Label" />
+                    <Label fx:id="formLbl" text="Label" />
+                    <Label fx:id="shootingLbl" text="Label" />
+                    <Label fx:id="staminaLbl" text="Label" />
+                    <Label fx:id="skillLbl" text="Label" />
+                    <Label fx:id="passingLbl" text="Label" />
+                    <Label fx:id="powerLbl" text="Label" />
+                    <Label fx:id="offenseLbl" text="Label" />
+                    <Label fx:id="defenseLbl" text="Label" />
+                    <Label fx:id="totalStrengthLbl" text="Label" textFill="$x1" />
+                  </children>
+                </VBox>
+              </children>
+            </HBox>
+            <HBox prefHeight="176.0" prefWidth="265.0">
+              <children>
+                <VBox prefHeight="200.0" prefWidth="100.0">
+                  <children>
+                    <Label text="Games" />
+                    <Label fx:id="goalsTextLbl" text="Goals" />
+                    <Label fx:id="assistsTextLbl" text="Assists" />
+                    <Label text="Penalty" />
+                    <Label text="+/-" />
+                  </children>
+                </VBox>
+                <VBox prefHeight="200.0" prefWidth="100.0">
+                  <children>
+                    <Label fx:id="gamesLbl" text="Label" />
+                    <Label fx:id="goalsLbl" text="Label" />
+                    <Label fx:id="assistsLbl" text="Label" />
+                    <Label fx:id="penaltyLbl" text="Label" />
+                    <Label fx:id="plusMinusLbl" text="Label" />
+                  </children>
+                </VBox>
+                <VBox prefHeight="200.0" prefWidth="100.0" />
+              </children>
+            </HBox>
+            <HBox prefHeight="150.0" prefWidth="265.0">
+              <children>
+                <VBox prefHeight="200.0" prefWidth="100.0">
+                  <children>
+                    <Label fx:id="wageTxtLbl" text="Wage" />
+                    <Label fx:id="contractTxtLbl" text="Contract" />
+                    <Label fx:id="feeTxtLbl" text="Fee" />
+                  </children>
+                </VBox>
+                <VBox prefHeight="200.0" prefWidth="100.0">
+                  <children>
+                    <Label fx:id="wageLbl" text="Label" />
+                    <Label fx:id="contractLbl" text="Label" />
+                    <Label fx:id="feeLbl" text="Label" />
+                  </children>
+                </VBox>
+                <VBox prefHeight="200.0" prefWidth="100.0">
+                  <children>
+                    <Label text="K/Round" />
+                    <Label />
+                    <Label text="K" />
+                  </children>
+                </VBox>
+              </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="411.0">
+              <children>
+                <Button mnemonicParsing="false" onAction="#ok" text="Ok" />
+              </children>
+            </HBox>
+          </children>
+        </VBox>
+        <VBox prefHeight="598.0" prefWidth="266.0" spacing="30.0">
+          <children>
+            <Label text="Motivation" />
+            <TextArea fx:id="motivationText" prefWidth="200.0" wrapText="true" />
+            <HBox prefHeight="100.0" prefWidth="200.0">
+              <children>
+                <VBox prefHeight="200.0" prefWidth="100.0">
+                  <children>
+                    <Label fx:id="injuryTxtLbl" text="Injury" />
+                    <Label fx:id="hurtTxtLbl" text="Hurt" />
+                  </children>
+                </VBox>
+                <VBox prefHeight="200.0" prefWidth="100.0">
+                  <children>
+                    <Label fx:id="injuryLbl" text="Label" />
+                    <Label fx:id="hurtLbl" text="Label" />
+                  </children>
+                </VBox>
+                <VBox prefHeight="200.0" prefWidth="100.0">
+                  <children>
+                    <Label fx:id="roundsLeft1Lbl" text="Rounds Left" />
+                    <Label fx:id="roundsLeft2Lbl" text="Rounds Left" />
+                  </children>
+                </VBox>
+              </children>
+            </HBox>
+            <Label text="Personal" />
+            <TextArea fx:id="personalText" prefWidth="200.0" wrapText="true" />
+            <Label text="Career" />
+            <TextArea fx:id="careerText" prefWidth="200.0" wrapText="true" />
+          </children>
+        </VBox>
+      </children>
+    </HBox>
+  </children>
+</AnchorPane>

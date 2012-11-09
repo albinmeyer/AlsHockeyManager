@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ This file is part of Al's Hockey Manager
+ Copyright (C) 1998-2012 Albin Meyer
+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<?language javascript?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml" fx:controller="ch.hockman.gui.LineUp">
+  <children>
+    <HBox layoutX="3.0" layoutY="2.0" prefHeight="600.0" prefWidth="783.0">
+      <children>
+        <VBox prefHeight="600.0" prefWidth="411.0">
+          <children>
+            <TabPane prefHeight="536.0" prefWidth="411.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="5-5">
+                  <content>
+                    <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="519.0" prefWidth="411.0">
+                      <children>
+                        <VBox id="VBox" alignment="CENTER" layoutX="17.0" layoutY="17.0" prefHeight="490.0" spacing="5.0">
+                          <children>
+                            <HBox prefHeight="52.0" prefWidth="379.0">
+                              <children>
+                                <Label text="Defense 1" />
+                                <ListView fx:id="defense1_55" prefHeight="33.0" prefWidth="200.0" />
+                              </children>
+                            </HBox>
+                            <HBox prefHeight="52.0" prefWidth="379.0">
+                              <children>
+                                <Label text="Defense 2" />
+                                <ListView fx:id="defense2_55" prefHeight="33.0" prefWidth="200.0" />
+                              </children>
+                            </HBox>
+                            <HBox prefHeight="55.0" prefWidth="379.0">
+                              <children>
+                                <Label text="Defense 3" />
+                                <ListView fx:id="defense3_55" prefHeight="33.0" prefWidth="200.0" />
+                              </children>
+                            </HBox>
+                            <HBox prefHeight="69.0" prefWidth="379.0">
+                              <children>
+                                <Label text="Offense 1" />
+                                <ListView fx:id="offense1_55" prefHeight="50.0" prefWidth="200.0" />
+                              </children>
+                            </HBox>
+                            <HBox prefHeight="69.0" prefWidth="379.0">
+                              <children>
+                                <Label text="Offense 2" />
+                                <ListView fx:id="offense2_55" prefHeight="50.0" prefWidth="200.0" />
+                              </children>
+                            </HBox>
+                            <HBox prefHeight="69.0" prefWidth="379.0">
+                              <children>
+                                <Label text="Offense 3" />
+                                <ListView fx:id="offense3_55" prefHeight="50.0" prefWidth="200.0" />
+                              </children>
+                            </HBox>
+                            <HBox prefHeight="69.0" prefWidth="379.0">
+                              <children>
+                                <Label text="Offense 4" />
+                                <ListView fx:id="offense4_55" prefHeight="50.0" prefWidth="200.0" />
+                              </children>
+                            </HBox>
+                          </children>
+                        </VBox>
+                      </children>
+                    </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="4-4">
+                  <content>
+                    <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                      <children>
+                        <HBox layoutX="16.0" layoutY="140.0" prefHeight="98.0" prefWidth="379.0">
+                          <children>
+                            <Label text="Line 2" />
+                            <ListView fx:id="line2_44" prefHeight="39.0" prefWidth="198.0" />
+                          </children>
+                        </HBox>
+                        <HBox layoutX="16.0" layoutY="24.0" prefHeight="98.0" prefWidth="379.0">
+                          <children>
+                            <Label text="Line 1" />
+                            <ListView fx:id="line1_44" prefHeight="39.0" prefWidth="198.0" />
+                          </children>
+                        </HBox>
+                      </children>
+                    </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="3-3">
+                  <content>
+                    <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                      <children>
+                        <HBox layoutX="16.0" layoutY="120.0" prefHeight="69.0" prefWidth="379.0">
+                          <children>
+                            <Label text="Line 2" />
+                            <ListView fx:id="line2_33" prefHeight="39.0" prefWidth="198.0" />
+                          </children>
+                        </HBox>
+                        <HBox layoutX="16.0" layoutY="21.0" prefHeight="69.0" prefWidth="379.0">
+                          <children>
+                            <Label text="Line 1" />
+                            <ListView fx:id="line1_33" prefHeight="39.0" prefWidth="198.0" />
+                          </children>
+                        </HBox>
+                      </children>
+                    </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="PP5">
+                  <content>
+                    <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                      <children>
+                        <HBox layoutX="16.0" layoutY="134.0" prefHeight="100.0" prefWidth="379.0">
+                          <children>
+                            <Label text="Line 2" />
+                            <ListView fx:id="line2_pp5" prefHeight="39.0" prefWidth="198.0" />
+                          </children>
+                        </HBox>
+                        <HBox layoutX="16.0" layoutY="22.0" prefHeight="100.0" prefWidth="379.0">
+                          <children>
+                            <Label text="Line 1" />
+                            <ListView fx:id="line1_pp5" prefHeight="39.0" prefWidth="198.0" />
+                          </children>
+                        </HBox>
+                      </children>
+                    </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="PP4">
+                  <content>
+                    <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                      <children>
+                        <HBox layoutX="14.0" layoutY="119.0" prefHeight="98.0" prefWidth="379.0">
+                          <children>
+                            <Label text="Line 2" />
+                            <ListView fx:id="line2_pp4" prefHeight="39.0" prefWidth="198.0" />
+                          </children>
+                        </HBox>
+                        <HBox layoutX="13.0" layoutY="14.0" prefHeight="98.0" prefWidth="379.0">
+                          <children>
+                            <Label text="Line 1" />
+                            <ListView fx:id="line1_pp4" prefHeight="39.0" prefWidth="198.0" />
+                          </children>
+                        </HBox>
+                      </children>
+                    </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="PK4">
+                  <content>
+                    <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                      <children>
+                        <HBox layoutX="18.0" layoutY="120.0" prefHeight="98.0" prefWidth="379.0">
+                          <children>
+                            <Label text="Line 2" />
+                            <ListView fx:id="line2_pk4" prefHeight="39.0" prefWidth="198.0" />
+                          </children>
+                        </HBox>
+                        <HBox layoutX="18.0" layoutY="14.0" prefHeight="98.0" prefWidth="379.0">
+                          <children>
+                            <Label text="Line 1" />
+                            <ListView fx:id="line1_pk4" prefHeight="39.0" prefWidth="198.0" />
+                          </children>
+                        </HBox>
+                      </children>
+                    </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="PK3">
+                  <content>
+                    <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                      <children>
+                        <HBox layoutX="18.0" layoutY="128.0" prefHeight="69.0" prefWidth="379.0">
+                          <children>
+                            <Label text="Line 2" />
+                            <ListView fx:id="line2_pk3" prefHeight="39.0" prefWidth="198.0" />
+                          </children>
+                        </HBox>
+                        <HBox layoutX="18.0" layoutY="29.0" prefHeight="69.0" prefWidth="379.0">
+                          <children>
+                            <Label text="Line 1" />
+                            <ListView fx:id="line1_pk3" prefHeight="39.0" prefWidth="198.0" />
+                          </children>
+                        </HBox>
+                      </children>
+                    </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="Goal">
+                  <content>
+                    <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                      <children>
+                        <HBox layoutX="14.0" layoutY="30.0" prefHeight="42.0" prefWidth="379.0">
+                          <children>
+                            <ListView fx:id="goalies" prefHeight="43.0" prefWidth="198.0" />
+                          </children>
+                        </HBox>
+                      </children>
+                    </AnchorPane>
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+            <HBox alignment="CENTER" prefHeight="42.0" prefWidth="411.0" spacing="20.0">
+              <children>
+                <Button mnemonicParsing="false" onAction="#ok" text="Ok" />
+                <Button mnemonicParsing="false" onAction="#defaultLineup" text="Default" />
+                <Button mnemonicParsing="false" onAction="#playerDetails" text="Spieler Details" />
+              </children>
+            </HBox>
+          </children>
+        </VBox>
+        <VBox prefHeight="397.0" prefWidth="300.0">
+          <children>
+            <Label fx:id="mouseLbl" text="Ziehe Spieler mit Maus zum Block" />
+            <Label fx:id="foreignersLbl" text="Label" />
+            <ListView fx:id="playerTable" prefHeight="556.0" prefWidth="300.0" />
+          </children>
+        </VBox>
+      </children>
+    </HBox>
+  </children>
+</AnchorPane>

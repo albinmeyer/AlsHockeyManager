@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ This file is part of Al's Hockey Manager
+ Copyright (C) 1998-2012 Albin Meyer
+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<?language javascript?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml" fx:controller="ch.hockman.gui.Stats">
+  <children>
+    <VBox layoutX="9.0" layoutY="14.0" prefHeight="485.0" prefWidth="783.0">
+      <children>
+        <HBox prefHeight="38.0" prefWidth="783.0">
+          <children>
+            <Button fx:id="nameBtn" mnemonicParsing="false" onAction="#nameBtn" prefWidth="134.0" styleClass="sortListButton" text="Name" />
+            <Button fx:id="firstNameBtn" mnemonicParsing="false" onAction="#firstNameBtn" prefWidth="103.0" styleClass="sortListButton" text="First Name" />
+            <Button fx:id="positionBtn" mnemonicParsing="false" onAction="#positionBtn" prefWidth="48.0" styleClass="sortListButton" text="Pos" />
+            <Button fx:id="ageBtn" mnemonicParsing="false" onAction="#ageBtn" styleClass="sortListButton" text="Age" />
+            <Button fx:id="teamBtn" mnemonicParsing="false" onAction="#teamBtn" prefWidth="142.0" styleClass="sortListButton" text="Team" />
+            <Button fx:id="goalsBtn" mnemonicParsing="false" onAction="#goalsBtn" prefWidth="48.0" styleClass="sortListButton" text="G" />
+            <Button fx:id="assistsBtn" mnemonicParsing="false" onAction="#assistsBtn" prefWidth="48.0" styleClass="sortListButton" text="A" />
+            <Button fx:id="pointsBtn" mnemonicParsing="false" onAction="#pointsBtn" prefWidth="48.0" styleClass="sortListButton" text="Pts" />
+            <Button fx:id="plusMinusBtn" mnemonicParsing="false" onAction="#plusMinusBtn" prefWidth="48.0" styleClass="sortListButton" text="+/-" />
+            <Button fx:id="pimBtn" mnemonicParsing="false" onAction="#pimBtn" prefWidth="48.0" styleClass="sortListButton" text="PIM" />
+          </children>
+        </HBox>
+        <ListView fx:id="statsList" prefHeight="453.0" prefWidth="670.0" />
+        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="411.0" spacing="20.0">
+          <children>
+            <Button mnemonicParsing="false" onAction="#ok" text="Ok" />
+            <Button mnemonicParsing="false" onAction="#playerDetails" text="Player Details" />
+            <VBox prefHeight="32.0" prefWidth="217.0">
+              <children>
+                <RadioButton fx:id="goalieRadio" mnemonicParsing="false" text="Goalies">
+                  <toggleGroup>
+                    <ToggleGroup fx:id="positionGrp" />
+                  </toggleGroup>
+                </RadioButton>
+                <RadioButton fx:id="defForRadio" mnemonicParsing="false" prefWidth="215.0" text="Defenders/Forwarders" toggleGroup="$positionGrp" />
+              </children>
+            </VBox>
+          </children>
+        </HBox>
+      </children>
+    </VBox>
+  </children>
+</AnchorPane>

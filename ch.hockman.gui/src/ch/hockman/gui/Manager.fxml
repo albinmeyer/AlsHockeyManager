@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ This file is part of Al's Hockey Manager
+ Copyright (C) 1998-2012 Albin Meyer
+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<?language javascript?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml" fx:controller="ch.hockman.gui.Manager">
+  <children>
+    <VBox layoutY="2.0" prefHeight="600.0" prefWidth="800.0">
+      <children>
+        <MenuBar>
+          <menus>
+            <Menu fx:id="fileMenu" mnemonicParsing="false" text="File">
+              <items>
+                <MenuItem fx:id="newMenu" mnemonicParsing="false" onAction="#newGame" text="New Game" />
+                <MenuItem fx:id="loadMenu" mnemonicParsing="false" onAction="#loadGame" text="Load" />
+                <MenuItem fx:id="saveMenu" mnemonicParsing="false" onAction="#saveGame" text="Save" />
+                <MenuItem fx:id="saveAsMenu" mnemonicParsing="false" onAction="#saveAsGame" text="Save As" />
+                <MenuItem fx:id="quitMenu" mnemonicParsing="false" onAction="#quitGame" text="Quit" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#about" text="About" />
+              </items>
+            </Menu>
+          </menus>
+        </MenuBar>
+        <Label fx:id="nextRoundLabel" text="Label" />
+        <HBox prefHeight="548.0" prefWidth="800.0" spacing="20.0">
+          <children>
+            <VBox prefHeight="548.0" prefWidth="478.0">
+              <children>
+                <HBox alignment="CENTER" prefHeight="50.0" prefWidth="411.0" spacing="20.0">
+                  <children>
+                    <Button fx:id="scheduleBtn" mnemonicParsing="false" onAction="#showSchedule" text="Spielplan" />
+                    <Button fx:id="rosterBtn" mnemonicParsing="false" onAction="#showRoster" text="Spieler und Verträge" />
+                    <Button fx:id="optionsBtn" mnemonicParsing="false" onAction="#showOptions" text="Options" />
+                  </children>
+                </HBox>
+                <HBox alignment="CENTER" prefHeight="50.0" prefWidth="411.0" spacing="20.0">
+                  <children>
+                    <Button fx:id="tablesBtn" mnemonicParsing="false" onAction="#showTables" text="Tabellen" />
+                    <Button fx:id="transfersBtn" mnemonicParsing="false" onAction="#showTransfers" text="Transfers" />
+                  </children>
+                </HBox>
+                <HBox alignment="CENTER" prefHeight="50.0" prefWidth="411.0" spacing="20.0">
+                  <children>
+                    <Button fx:id="statsBtn" mnemonicParsing="false" onAction="#showStats" text="Stats" />
+                    <Button fx:id="lineupBtn" mnemonicParsing="false" onAction="#showLineUp" text="Line Up" />
+                    <Button fx:id="tacticsBtn" mnemonicParsing="false" onAction="#showTactics" text="Taktik" />
+                  </children>
+                </HBox>
+                <HBox alignment="CENTER" prefHeight="50.0" prefWidth="411.0" spacing="20.0">
+                  <children>
+                    <Button fx:id="financesBtn" mnemonicParsing="false" onAction="#showFinances" text="Finanzen" />
+                    <Button fx:id="trainingBtn" mnemonicParsing="false" onAction="#showTraining" text="Training" />
+                    <Button fx:id="newsBtn" mnemonicParsing="false" onAction="#showNews" text="News" />
+                  </children>
+                </HBox>
+                <HBox alignment="CENTER" prefHeight="50.0" prefWidth="411.0" spacing="20.0">
+                  <children>
+                    <Button fx:id="playRoundBtn" mnemonicParsing="false" onAction="#playRound" prefHeight="43.0" prefWidth="214.0" text="Spieltag" />
+                  </children>
+                </HBox>
+                <Label fx:id="newsLbl" text="Nachrichten" />
+                <TextArea fx:id="messageArea" prefWidth="200.0" wrapText="true" />
+              </children>
+            </VBox>
+            <VBox prefHeight="548.0" prefWidth="266.0">
+              <children>
+                <ImageView fx:id="homePic" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                <ImageView fx:id="awayPic" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                <Label fx:id="leagueLabel" text="Label" />
+                <Label fx:id="teamLabel" text="Label" />
+                <Label fx:id="yearLabel" text="Label" />
+              </children>
+            </VBox>
+          </children>
+        </HBox>
+      </children>
+    </VBox>
+  </children>
+</AnchorPane>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ This file is part of Al's Hockey Manager
+ Copyright (C) 1998-2012 Albin Meyer
+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<?language javascript?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml" fx:controller="ch.hockman.gui.Finances">
+  <children>
+    <VBox prefHeight="600.0" prefWidth="800.0" spacing="50.0">
+      <children>
+        <HBox id="HBox" alignment="CENTER" spacing="5.0">
+          <children>
+            <Label text="Cash Before:" />
+            <Label fx:id="cashBeforeLbl" text="Label" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="274.0" prefWidth="800.0" spacing="80.0">
+          <children>
+            <VBox id="VBox" spacing="5.0">
+              <children>
+                <Label fx:id="incomeLbl" text="Income" />
+                <HBox id="HBox" alignment="CENTER" spacing="5.0">
+                  <children>
+                    <VBox prefHeight="274.0" prefWidth="115.0" spacing="5.0">
+                      <children>
+                        <Label text="Transfer" />
+                        <Label text="Game" />
+                        <Label text="Sponsor" />
+                        <Label text="Commercials" />
+                      </children>
+                    </VBox>
+                    <VBox prefHeight="274.0" prefWidth="105.0" spacing="5.0">
+                      <children>
+                        <Label fx:id="transferIncLbl" text="Label" />
+                        <Label fx:id="gameIncLbl" text="Label" />
+                        <Label fx:id="sponsorLbl" text="Label" />
+                        <Label fx:id="commercialsLbl" text="Label" />
+                      </children>
+                    </VBox>
+                  </children>
+                </HBox>
+              </children>
+            </VBox>
+            <VBox id="VBox" prefHeight="274.0" prefWidth="399.0" spacing="5.0">
+              <children>
+                <Label  fx:id="expensesLbl" text="Expenses" />
+                <HBox id="HBox" alignment="CENTER" spacing="5.0">
+                  <children>
+                    <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0">
+                      <children>
+                        <Label text="Transfer" />
+                        <Label text="Game" />
+                        <Label text="Material" />
+                        <Label text="Wages" />
+                        <Label text="Interests" />
+                        <Label text="Youth" />
+                      </children>
+                    </VBox>
+                    <VBox prefHeight="200.0" prefWidth="245.0" spacing="5.0">
+                      <children>
+                        <Label fx:id="transferExpLbl" text="Label" />
+                        <Label fx:id="gameExpLbl" text="Label" />
+                        <Label fx:id="materialLbl" text="Label" />
+                        <Label fx:id="wagesLbl" text="Label" />
+                        <Label fx:id="interestsLbl" text="Label" />
+                        <ChoiceBox fx:id="youthDropDown">
+                          <items>
+                            <FXCollections fx:factory="observableArrayList">
+                              <String fx:value="Item 1" />
+                              <String fx:value="Item 2" />
+                              <String fx:value="Item 3" />
+                            </FXCollections>
+                          </items>
+                        </ChoiceBox>
+                      </children>
+                    </VBox>
+                  </children>
+                </HBox>
+              </children>
+            </VBox>
+          </children>
+        </HBox>
+        <HBox id="HBox" alignment="CENTER" spacing="5.0">
+          <children>
+            <Label text="Cash now:" />
+            <Label fx:id="cashNowLbl" text="Label" />
+          </children>
+        </HBox>
+        <Label fx:id="noteLbl" text="Note: if your cash amount is negative, you cannot buy new players." />
+        <Label fx:id="recommendLbl" text="Recommended Youth Expenses: 14" />
+        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="411.0">
+          <children>
+            <Button mnemonicParsing="false" onAction="#ok" text="Ok" />
+          </children>
+        </HBox>
+      </children>
+    </VBox>
+  </children>
+</AnchorPane>

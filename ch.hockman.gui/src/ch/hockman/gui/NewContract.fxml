@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ This file is part of Al's Hockey Manager
+ Copyright (C) 1998-2012 Albin Meyer
+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<?language javascript?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml" fx:controller="ch.hockman.gui.NewContract">
+  <children>
+    <VBox prefHeight="600.0" prefWidth="800.0" spacing="30.0">
+      <children>
+        <Label fx:id="prolongueLbl" text="Label" />
+        <Label text="Proposal" />
+        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="411.0" spacing="20.0">
+          <children>
+            <VBox prefHeight="50.0" prefWidth="229.0">
+              <children>
+                <Label fx:id="contractYearsTxtLbl" text="Contract Years" />
+                <Label fx:id="wageTxtLbl" text="Wage" />
+              </children>
+            </VBox>
+            <VBox prefHeight="50.0" prefWidth="422.0">
+              <children>
+                <ChoiceBox fx:id="yearsChoice">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList">
+                      <String fx:value="1" />
+                      <String fx:value="2" />
+                      <String fx:value="3" />
+                      <String fx:value="4" />
+                    </FXCollections>
+                  </items>
+                </ChoiceBox>
+                <ChoiceBox fx:id="wageChoice">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList">
+                      <String fx:value="Item 1" />
+                      <String fx:value="Item 2" />
+                      <String fx:value="Item 3" />
+                    </FXCollections>
+                  </items>
+                </ChoiceBox>
+              </children>
+            </VBox>
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+          <children>
+            <Button mnemonicParsing="false" onAction="#makeOffer" text="Make Offer" />
+          </children>
+        </HBox>
+        <Label text="Counter Proposal" />
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+          <children>
+            <VBox prefHeight="100.0" prefWidth="243.0">
+              <children>
+                <Label fx:id="counterContractYearsTxtLbl" text="Contract Years" />
+                <Label fx:id="counterWageTxtLbl" text="Wage" />
+              </children>
+            </VBox>
+            <VBox prefHeight="100.0" prefWidth="449.0">
+              <children>
+                <Label fx:id="counterContractYearsLbl" text="Label" />
+                <Label fx:id="counterWageLbl" text="Label" />
+              </children>
+            </VBox>
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="411.0" spacing="30.0">
+          <children>
+            <Button fx:id="okBtn" mnemonicParsing="false" onAction="#ok" text="Ok" />
+            <Button mnemonicParsing="false" onAction="#cancel" text="Cancel" />
+          </children>
+        </HBox>
+        <HBox prefHeight="50.0" prefWidth="411.0" />
+      </children>
+    </VBox>
+  </children>
+</AnchorPane>

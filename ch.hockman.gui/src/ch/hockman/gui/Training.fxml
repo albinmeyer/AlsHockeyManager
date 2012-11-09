@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ This file is part of Al's Hockey Manager
+ Copyright (C) 1998-2012 Albin Meyer
+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<?language javascript?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml" fx:controller="ch.hockman.gui.Training">
+  <children>
+    <VBox prefHeight="600.0" prefWidth="800.0">
+      <children>
+        <HBox prefHeight="532.0" prefWidth="800.0">
+          <children>
+            <VBox prefHeight="532.0" prefWidth="200.0" spacing="20.0">
+              <children>
+                <Label fx:id="shootingLbl" text="" />
+                <Label fx:id="staminaLbl" text="" />
+                <Label fx:id="skillLbl" text="" />
+                <Label fx:id="passingLbl" text="" />
+                <Label fx:id="powerLbl" text="" />
+                <Label fx:id="offplayLbl" text="" />
+                <Label fx:id="defplayLbl" text="" />
+                <Label fx:id="mentalTrainingLbl" text="" />
+              </children>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0" spacing="14.0">
+              <children>
+                <ChoiceBox fx:id="shootingDropDown">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList">
+                      <String fx:value="Item 1" />
+                      <String fx:value="Item 2" />
+                      <String fx:value="Item 3" />
+                    </FXCollections>
+                  </items>
+                </ChoiceBox>
+                <ChoiceBox fx:id="staminaDropDown">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList">
+                      <String fx:value="Item 1" />
+                      <String fx:value="Item 2" />
+                      <String fx:value="Item 3" />
+                    </FXCollections>
+                  </items>
+                </ChoiceBox>
+                <ChoiceBox fx:id="skillDropDown">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList">
+                      <String fx:value="Item 1" />
+                      <String fx:value="Item 2" />
+                      <String fx:value="Item 3" />
+                    </FXCollections>
+                  </items>
+                </ChoiceBox>
+                <ChoiceBox fx:id="passingDropDown">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList">
+                      <String fx:value="Item 1" />
+                      <String fx:value="Item 2" />
+                      <String fx:value="Item 3" />
+                    </FXCollections>
+                  </items>
+                </ChoiceBox>
+                <ChoiceBox fx:id="powerDropDown">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList">
+                      <String fx:value="Item 1" />
+                      <String fx:value="Item 2" />
+                      <String fx:value="Item 3" />
+                    </FXCollections>
+                  </items>
+                </ChoiceBox>
+                <ChoiceBox fx:id="offensivePlayDropDown">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList">
+                      <String fx:value="Item 1" />
+                      <String fx:value="Item 2" />
+                      <String fx:value="Item 3" />
+                    </FXCollections>
+                  </items>
+                </ChoiceBox>
+                <ChoiceBox fx:id="defensivePlayDropDown">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList">
+                      <String fx:value="Item 1" />
+                      <String fx:value="Item 2" />
+                      <String fx:value="Item 3" />
+                    </FXCollections>
+                  </items>
+                </ChoiceBox>
+                <ChoiceBox fx:id="mentalDropDown">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList">
+                      <String fx:value="Item 1" />
+                      <String fx:value="Item 2" />
+                      <String fx:value="Item 3" />
+                    </FXCollections>
+                  </items>
+                </ChoiceBox>
+              </children>
+            </VBox>
+            <VBox prefHeight="532.0" prefWidth="270.0" spacing="20.0">
+              <children>
+                <Label fx:id="avShootingLbl" text="Label" />
+                <Label fx:id="avStaminaLbl" text="Label" />
+                <Label fx:id="avSkillLbl" text="Label" />
+                <Label fx:id="avPassingLbl" text="Label" />
+                <Label fx:id="avPowerLbl" text="Label" />
+                <Label fx:id="avOffensiveLbl" text="Label" />
+                <Label fx:id="avDefensiveLbl" text="Label" />
+              </children>
+            </VBox>
+            <VBox prefHeight="532.0" prefWidth="200.0">
+              <children>
+                <Label fx:id="effortLbl" text="Effort" />
+                <RadioButton fx:id="fullEffortRadio" mnemonicParsing="false" text="Full">
+                  <toggleGroup>
+                    <ToggleGroup fx:id="effortToggleGroup" />
+                  </toggleGroup>
+                </RadioButton>
+                <RadioButton fx:id="normalEffortRadio" mnemonicParsing="false" text="Normal" toggleGroup="$effortToggleGroup" />
+                <RadioButton fx:id="lowEffortRadio" mnemonicParsing="false" text="Low" toggleGroup="$effortToggleGroup" />
+              </children>
+            </VBox>
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="411.0" spacing="50.0">
+          <children>
+            <Button mnemonicParsing="false" onAction="#ok" text="Ok" />
+            <Button mnemonicParsing="false" onAction="#cancel" text="Cancel" />
+          </children>
+        </HBox>
+      </children>
+    </VBox>
+  </children>
+</AnchorPane>

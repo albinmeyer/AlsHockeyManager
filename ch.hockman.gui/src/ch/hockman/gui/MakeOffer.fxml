@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ This file is part of Al's Hockey Manager
+ Copyright (C) 1998-2012 Albin Meyer
+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<?language javascript?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml" fx:controller="ch.hockman.gui.MakeOffer">
+  <children>
+    <VBox prefHeight="600.0" prefWidth="800.0" spacing="30.0">
+      <children>
+        <Label fx:id="offerText" text="Label" />
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="800.0" spacing="30.0">
+          <children>
+            <VBox prefHeight="100.0" prefWidth="182.0">
+              <children>
+                <RadioButton fx:id="immediatelyRadio" mnemonicParsing="false" text="Immediately">
+                  <toggleGroup>
+                    <ToggleGroup fx:id="transferTime" />
+                  </toggleGroup>
+                </RadioButton>
+                <RadioButton fx:id="nextSeasonRadio" mnemonicParsing="false" text="Next Season" toggleGroup="$transferTime" />
+              </children>
+            </VBox>
+            <VBox prefHeight="100.0" prefWidth="276.0">
+              <children>
+                <Label fx:id="immTxt" text="Label" />
+                <Label fx:id="nextTxt" text="Label" />
+              </children>
+            </VBox>
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="241.0" prefWidth="800.0" spacing="100.0">
+          <children>
+            <VBox fx:id="cashGroupBox" prefHeight="100.0" prefWidth="182.0">
+              <children>
+                <Label text="Cash Transfer" />
+                <HBox prefHeight="36.0" prefWidth="171.0">
+                  <children>
+                    <Label fx:id="contractLbl" text="Contract" />
+                    <ChoiceBox fx:id="contractChoice">
+                      <items>
+                        <FXCollections fx:factory="observableArrayList">
+                          <String fx:value="1" />
+                          <String fx:value="2" />
+                          <String fx:value="3" />
+                          <String fx:value="4" />
+                        </FXCollections>
+                      </items>
+                    </ChoiceBox>
+                  </children>
+                </HBox>
+                <HBox prefHeight="100.0" prefWidth="200.0">
+                  <children>
+                    <Label fx:id="wageLbl" text="Wage" />
+                    <ChoiceBox fx:id="wageChoice">
+                      <items>
+                        <FXCollections fx:factory="observableArrayList">
+                          <String fx:value="Item 1" />
+                        </FXCollections>
+                      </items>
+                    </ChoiceBox>
+                  </children>
+                </HBox>
+                <Label fx:id="feeLbl" text="Label" />
+              </children>
+            </VBox>
+            <VBox fx:id="tradingGroupBox" prefHeight="100.0" prefWidth="192.0">
+              <children>
+                <Label fx:id="tradingAgainstLbl" text="Trading against" />
+                <ChoiceBox fx:id="tradeChoice" prefWidth="160.0">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList">
+                      <String fx:value="Item 1" />
+                    </FXCollections>
+                  </items>
+                </ChoiceBox>
+              </children>
+            </VBox>
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="411.0" spacing="30.0">
+          <children>
+            <Button mnemonicParsing="false" onAction="#ok" text="Ok" />
+            <Button mnemonicParsing="false" onAction="#cancel" text="Cancel" />
+          </children>
+        </HBox>
+      </children>
+    </VBox>
+  </children>
+</AnchorPane>
