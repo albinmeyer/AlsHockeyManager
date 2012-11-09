@@ -344,11 +344,6 @@ public class Transfer {
 		}
 	}
 
-	/**
-	 * called by ScanBuyNeg() of own team, or by GUI
-	 * 
-	 * @param offer
-	 */
 	public void cancelOffer(Offer offer) {
 		buyNeg.remove(offer);
 		offer.getSeller().getTransfer().sellNeg.remove(offer);
