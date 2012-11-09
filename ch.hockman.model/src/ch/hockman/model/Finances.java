@@ -104,7 +104,7 @@ public class Finances {
 	public void doFinances(Team team, int additionalDays, int nofRounds) {
 		youthSaved += expenses.youth;
 		Team.Sponsoring sponsoring = team.getSponsoring();
-		// 12/21/98 more cash => less sponsoring
+		// more cash => less sponsoring
 		int ran;
 		if (sponsoring == Team.Sponsoring.GOOD) {
 			ran = 200 - currTotal / 10;

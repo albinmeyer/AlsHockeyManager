@@ -628,14 +628,12 @@ public class Transfer {
 										.random(10)
 									&& (offer.getTrade().getPosition() == offer.getPlayer()
 											.getPosition() || Util.random(2) > 0))) {
-						// if the wage is acceptable and the buyer can pay the
-						// fee
-						// NYI should be improved ...
+						// if the wage is acceptable and the buyer can pay the fee
+						// TODO transfer should be improved ...
 						int nofPlayers = buyerNofPlayers(offer, allPlayers);
 						if (nofPlayers < Team.TEAM_MAXTEAMPLAYER
 								+ Team.TEAM_MAXFARMPLAYER) {
-							// 11/2/98
-							// 01/26/99 prof level => less accepts !
+							// prof level => less accepts !
 							ran = 2;
 							if (Options.level == Options.Level.PROF
 									&& offer.getBuyer().getTeamState()
@@ -779,7 +777,7 @@ public class Transfer {
 					}
 					offer.setYears(years);
 					offer.setWage(player.getInitWage() + offer.getYears() - 1);
-					offer.setFee(player.getFee()); // 12/08/98
+					offer.setFee(player.getFee());
 					offer.setImmediately(imm);
 					if (!tradeEnabled
 							&& offer.isImmediately()
@@ -790,8 +788,7 @@ public class Transfer {
 					}
 					if (tradeEnabled && offer.isImmediately()) {
 
-						// NYI
-						// AI for trading
+						// TODO improve AI for trading
 
 						int counter = 0;
 						do {
@@ -807,10 +804,8 @@ public class Transfer {
 								&& (offer.getTrade().getContracts().getNextContr()
 										.getTeam() != null || p.bitSet
 										.get(GOALIES)
-										&& offer.getTrade().getPosition().getPosID() == Position.PosID.GOALIE // 12/14/98
-								// too
-								// few
-								// goalies
+										&& offer.getTrade().getPosition().getPosID() == Position.PosID.GOALIE
+								// too few goalies
 								));
 						if (counter == 50) {
 							offer.setImmediately(false);
@@ -819,7 +814,6 @@ public class Transfer {
 					}
 					offer.setSeller(player.getContracts().getCurrContr().getTeam());
 					offer.setBuyer(team);
-					// MakingOffer mo=
 					makeOffer(offer, allPlayers, news);
 				}
 			}

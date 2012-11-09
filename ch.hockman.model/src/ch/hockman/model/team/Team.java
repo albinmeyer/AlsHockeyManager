@@ -584,8 +584,7 @@ public class Team {
 						no = Util.random(98) + 1; // 1..98 (99 is for Gretzky
 						// only!)
 					}
-					// 11/11/98 only goalies have number 1, only defenders can
-					// have 2,3,4,5
+					// only goalies have number 1, only defenders can have 2,3,4,5
 					while (no == 1
 							&& player.getPosition().getPosID() != Position.PosID.GOALIE
 							|| no > 1
@@ -1022,9 +1021,7 @@ public class Team {
 						|| !all
 						&& player.getPosition().getPosID() == Position.PosID.DEFENDER
 						|| player.getPosition().getPosID() == Position.PosID.GOALIE
-						|| player.getHealth().getInjury() > 0 // 10/13/98 don't
-				// lineup injured
-				// players
+						|| player.getHealth().getInjury() > 0 // don't lineup injured players
 				|| !checkForeigners(player, maxNofForeigners))) {
 			// don't take already playing as substitutes for not available pos
 			player = getTeamPlayer(nonPlayingIter);
@@ -1036,8 +1033,7 @@ public class Team {
 				|| !all
 				&& player.getPosition().getPosID() == Position.PosID.DEFENDER
 				|| player.getPosition().getPosID() == Position.PosID.GOALIE
-				|| player.getHealth().getInjury() > 0 // 10/13/98 don't lineup
-				// injured players
+				|| player.getHealth().getInjury() > 0 // don't lineup injured players
 				|| !checkForeigners(player, maxNofForeigners)) {
 			if (!all) {
 				// prefer forwards

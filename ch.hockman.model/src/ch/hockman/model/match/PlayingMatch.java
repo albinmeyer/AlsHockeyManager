@@ -260,8 +260,8 @@ public class PlayingMatch {
 			}
 		}
 		if (getEvent().bitSet.get(INJURY)) {
-			// 10/20/98 if new injury, do new put on ice
-			putOnIce(mt); // put players onto ice
+			// if new injury, do new put on ice
+			putOnIce(mt);
 		}
 
 	}
@@ -633,7 +633,7 @@ public class PlayingMatch {
 						}
 					}
 				}
-				// 11/12/98 don't take incomplete blocks
+				// don't take incomplete blocks
 				if (block == 1
 						&& (awayLineUp.getE55().d11 == null
 								|| awayLineUp.getE55().d12 == null
@@ -791,7 +791,7 @@ public class PlayingMatch {
 						}
 					}
 				}
-				// 11/12/98 don't take incomplete blocks
+				// don't take incomplete blocks
 				if (block == 1
 						&& (homeLineUp.getE55().d11 == null
 								|| homeLineUp.getE55().d12 == null
@@ -877,7 +877,7 @@ public class PlayingMatch {
 						block = 2;
 					}
 				}
-				// 11/12/98 don't take incomplete blocks
+				// don't take incomplete blocks
 				if (block == 1
 						&& (awayLineUp.getE44().d11 == null
 								|| awayLineUp.getE44().d12 == null
@@ -1760,12 +1760,10 @@ public class PlayingMatch {
 		while (i < onIce.homePlayer.GetNofPlayers()) {
 			Player player = onIce.homePlayer.GetPlayer(i);
 			if (penBox.homePlayer.GetIdPlayer(player.getId()) != null
-					|| player.getHealth().getInjury() > 0 // 10/13/98 there are
-			// no injured players
-			// on ice !
+					|| player.getHealth().getInjury() > 0 // there are no injured players on ice !
 			) {
 				onIce.homePlayer.RemovePlayer(player);
-				// NYI get least tired player from the lineups
+				// TODO get least tired player from the lineups
 				player = homeLineUp.getE55().c4;
 				if (player == null
 						|| player.getHealth().getInjury() > 0

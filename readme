@@ -1,8 +1,5 @@
-Al's Hockey Manager
-===================
-
-An icehockey simulation game. Play with your favorite team in any league you want against AI teams.
-
-I'm working with Eclipse 4.2 and JavaFX SDK 2.2. The application runs with JavaSE-1.7.
-
+Al's Hockey Manager is an icehockey simulation game. Play with your favorite team in any league you want against AI teams.
+I'm working with Eclipse 4.2 with the e(fx)clipse plugin and JavaFX SDK 2.2.
+The application runs with JavaSE-1.7.
+This game was written in 1998-1999 by me using Borland C++ Builder, and converted to Java FX in 2012.
 Known issues and bugs are listed in the file "todo.txt".

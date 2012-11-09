@@ -97,14 +97,12 @@ public class Report implements Initializable {
 			s += HockmanMain.currReport.getInjuries();
 			s += "\n\nBest Players:\n";
 			if (HockmanMain.currReport.getBestHomePlayer().isMultipleName()) {
-				// 1/8/99
 				s += HockmanMain.currReport.getBestHomePlayer().getFirstName();
 				s += " ";
 			}
 			s += HockmanMain.currReport.getBestHomePlayer().getLastName();
 			s += "\n";
 			if (HockmanMain.currReport.getBestAwayPlayer().isMultipleName()) {
-				// 1/8/99
 				s += HockmanMain.currReport.getBestAwayPlayer().getFirstName();
 				s += " ";
 			}
