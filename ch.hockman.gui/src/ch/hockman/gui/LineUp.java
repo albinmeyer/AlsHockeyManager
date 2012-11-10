@@ -115,6 +115,9 @@ public class LineUp implements Initializable {
 	private ListView goalies;
 
 	@FXML
+	private Label helpLbl;
+	
+	@FXML
 	private Label foreignersLbl;
 	
 	@FXML
@@ -151,6 +154,7 @@ public class LineUp implements Initializable {
 				playerDetails(new ActionEvent());
 			}
 		});
+		helpLbl.setText(Util.getModelResourceBundle().getString("L_LINEUP_HELP"));
 		mouseLbl.setText(Util.getModelResourceBundle().getString("L_DRAW_MOUSE"));
 		foreignersLbl.setText(Util.getModelResourceBundle().getString("L_MAX_NUMBER_FOREIGNERS")
 				+ HockmanMain.game.getLeague().getModus().maxNofForeigners());

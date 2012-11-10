@@ -220,6 +220,7 @@
                 </Tab>
               </tabs>
             </TabPane>
+            <Label fx:id="helpLbl" text="" />
             <HBox alignment="CENTER" prefHeight="42.0" prefWidth="411.0" spacing="20.0">
               <children>
                 <Button mnemonicParsing="false" onAction="#ok" text="Ok" />
@@ -231,8 +232,8 @@
         </VBox>
         <VBox prefHeight="397.0" prefWidth="300.0">
           <children>
-            <Label fx:id="mouseLbl" text="Ziehe Spieler mit Maus zum Block" />
-            <Label fx:id="foreignersLbl" text="Label" />
+            <Label fx:id="mouseLbl" text="" />
+            <Label fx:id="foreignersLbl" text="" />
             <ListView fx:id="playerTable" prefHeight="556.0" prefWidth="300.0" />
           </children>
         </VBox>

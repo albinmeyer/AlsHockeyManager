@@ -29,6 +29,7 @@
       <children>
         <VBox alignment="CENTER" prefHeight="598.0" prefWidth="797.0">
           <children>
+            <Label fx:id="leagueDataLbl" text="" />          
             <Label fx:id="questionLbl" text="" />
             <HBox alignment="CENTER" prefHeight="356.0" prefWidth="411.0">
               <children>

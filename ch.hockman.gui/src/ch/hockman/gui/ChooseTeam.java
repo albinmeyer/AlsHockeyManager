@@ -19,6 +19,7 @@
 package ch.hockman.gui;
 
 import java.net.URL;
+import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -50,11 +51,24 @@ public class ChooseTeam implements Initializable {
 	private ListView teamList;
 
 	@FXML
+	private Label leagueDataLbl; 
+
+	@FXML
 	private Label questionLbl; 
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		if (HockmanMain.game != null) {
+			Object[] messageArguments = {
+					HockmanMain.game.getLeague().getLeagueName(),
+					Integer.toString(HockmanMain.game.getYear()),
+					HockmanMain.game.getLeague().getModus().getNofDivisions(),
+					HockmanMain.game.getLeague().getModus().getNofTeams()
+				};
+			MessageFormat formatter = new MessageFormat("");
+			formatter.applyPattern(Util.getModelResourceBundle().getString("L_LEAGUE_DATA"));
+			String output = formatter.format(messageArguments);
+			leagueDataLbl.setText(output);
 			questionLbl.setText(Util.getModelResourceBundle().getString("L_WHICH_TEAM"));
 			List<String> teamNames = new ArrayList<String>();
 			for (int div = 1; div <= (HockmanMain.game.getLeague().getModus().getNofDivisions()); div++) {

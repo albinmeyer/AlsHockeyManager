@@ -90,6 +90,9 @@ public class Training implements Initializable {
 	private Label avDefensiveLbl;
 
 	@FXML
+	private Label helpLbl;
+	
+	@FXML
 	private ToggleGroup effortToggleGroup;
 
 	@FXML
@@ -130,6 +133,7 @@ public class Training implements Initializable {
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
+		helpLbl.setText(Util.getModelResourceBundle().getString("L_LBL_TRAINING_HELP"));
 		shootingLbl.setText(Util.getModelResourceBundle().getString("L_LBL_TRAINING_SHOOTING"));
 		staminaLbl.setText(Util.getModelResourceBundle().getString("L_LBL_TRAINING_STAMINA"));
 		skillLbl.setText(Util.getModelResourceBundle().getString("L_LBL_TRAINING_SKILL"));
