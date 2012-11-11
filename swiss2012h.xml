@@ -1451,7 +1451,7 @@ Davos</Career>
 		<CharacterId>1</CharacterId><!--0=Aggr, 1=Ambit, 2=Fun, 3=Lead, 4=Money, 5=Extr, 6=Intr, 7=Teamw-->
 		<Shooting>43</Shooting>
 		<Stamina>74</Stamina>
-		<Skill>85</Skill>
+		<Skill>81</Skill>
 		<Passing>44</Passing>
 		<Power>76</Power>
 		<Offense>56</Offense>
@@ -1653,7 +1653,7 @@ Färjestad</Career>
 		<Id>19</Id>
 		<FirstName>Andri</FirstName>
 		<LastName>Stoffel</LastName>
-		<Personal>----</Personal>
+		<Personal></Personal>
 		<Career></Career>
 		<PicPath></PicPath>
 		<BirthdayDay>24</BirthdayDay>
@@ -1715,7 +1715,7 @@ Servette</Career>
 		<BirthdayMonth>9</BirthdayMonth>
 		<BirthdayYear>1983</BirthdayYear>
 		<PosId>3</PosId><!--0=G, 1=D, 2=LW, 3=C, 4=RW-->
-		<Number>62</Number>
+		<Number>44</Number>
 		<NationId>0</NationId><!--Id referencing to a Nation element-->
 		<NatGames>163</NatGames>
 		<Height>176</Height>

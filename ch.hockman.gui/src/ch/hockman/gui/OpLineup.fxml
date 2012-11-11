@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <!--
  This file is part of Al's Hockey Manager
  Copyright (C) 1998-2012 Albin Meyer
@@ -36,15 +37,15 @@
                   <content>
                     <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="519.0" prefWidth="411.0">
                       <children>
-                        <VBox id="VBox" alignment="CENTER" layoutX="17.0" layoutY="17.0" prefHeight="490.0" spacing="5.0">
+                        <VBox id="VBox" alignment="CENTER" layoutX="17.0" layoutY="17.0" prefHeight="490.0" spacing="2.0">
                           <children>
-                            <HBox prefHeight="52.0" prefWidth="379.0">
+                            <HBox prefHeight="55.0" prefWidth="379.0">
                               <children>
                                 <Label text="Defense 1" />
                                 <ListView fx:id="defense1_55" prefHeight="33.0" prefWidth="200.0" />
                               </children>
                             </HBox>
-                            <HBox prefHeight="52.0" prefWidth="379.0">
+                            <HBox prefHeight="55.0" prefWidth="379.0">
                               <children>
                                 <Label text="Defense 2" />
                                 <ListView fx:id="defense2_55" prefHeight="33.0" prefWidth="200.0" />
@@ -56,25 +57,25 @@
                                 <ListView fx:id="defense3_55" prefHeight="33.0" prefWidth="200.0" />
                               </children>
                             </HBox>
-                            <HBox prefHeight="69.0" prefWidth="379.0">
+                            <HBox prefHeight="75.0" prefWidth="379.0">
                               <children>
                                 <Label text="Offense 1" />
                                 <ListView fx:id="offense1_55" prefHeight="50.0" prefWidth="200.0" />
                               </children>
                             </HBox>
-                            <HBox prefHeight="69.0" prefWidth="379.0">
+                            <HBox prefHeight="75.0" prefWidth="379.0">
                               <children>
                                 <Label text="Offense 2" />
                                 <ListView fx:id="offense2_55" prefHeight="50.0" prefWidth="200.0" />
                               </children>
                             </HBox>
-                            <HBox prefHeight="69.0" prefWidth="379.0">
+                            <HBox prefHeight="75.0" prefWidth="379.0">
                               <children>
                                 <Label text="Offense 3" />
                                 <ListView fx:id="offense3_55" prefHeight="50.0" prefWidth="200.0" />
                               </children>
                             </HBox>
-                            <HBox prefHeight="69.0" prefWidth="379.0">
+                            <HBox prefHeight="75.0" prefWidth="379.0">
                               <children>
                                 <Label text="Offense 4" />
                                 <ListView fx:id="offense4_55" prefHeight="50.0" prefWidth="200.0" />
@@ -90,13 +91,13 @@
                   <content>
                     <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                       <children>
-                        <HBox layoutX="16.0" layoutY="140.0" prefHeight="98.0" prefWidth="379.0">
+                        <HBox layoutX="16.0" layoutY="140.0" prefHeight="110.0" prefWidth="379.0">
                           <children>
                             <Label text="Line 2" />
                             <ListView fx:id="line2_44" prefHeight="39.0" prefWidth="198.0" />
                           </children>
                         </HBox>
-                        <HBox layoutX="16.0" layoutY="24.0" prefHeight="98.0" prefWidth="379.0">
+                        <HBox layoutX="16.0" layoutY="24.0" prefHeight="110.0" prefWidth="379.0">
                           <children>
                             <Label text="Line 1" />
                             <ListView fx:id="line1_44" prefHeight="39.0" prefWidth="198.0" />
@@ -110,13 +111,13 @@
                   <content>
                     <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                       <children>
-                        <HBox layoutX="16.0" layoutY="120.0" prefHeight="69.0" prefWidth="379.0">
+                        <HBox layoutX="16.0" layoutY="120.0" prefHeight="75.0" prefWidth="379.0">
                           <children>
                             <Label text="Line 2" />
                             <ListView fx:id="line2_33" prefHeight="39.0" prefWidth="198.0" />
                           </children>
                         </HBox>
-                        <HBox layoutX="16.0" layoutY="21.0" prefHeight="69.0" prefWidth="379.0">
+                        <HBox layoutX="16.0" layoutY="21.0" prefHeight="75.0" prefWidth="379.0">
                           <children>
                             <Label text="Line 1" />
                             <ListView fx:id="line1_33" prefHeight="39.0" prefWidth="198.0" />
@@ -130,13 +131,13 @@
                   <content>
                     <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                       <children>
-                        <HBox layoutX="16.0" layoutY="134.0" prefHeight="100.0" prefWidth="379.0">
+                        <HBox layoutX="16.0" layoutY="158.0" prefHeight="120.0" prefWidth="379.0">
                           <children>
                             <Label text="Line 2" />
                             <ListView fx:id="line2_pp5" prefHeight="39.0" prefWidth="198.0" />
                           </children>
                         </HBox>
-                        <HBox layoutX="16.0" layoutY="22.0" prefHeight="100.0" prefWidth="379.0">
+                        <HBox layoutX="16.0" layoutY="22.0" prefHeight="120.0" prefWidth="379.0">
                           <children>
                             <Label text="Line 1" />
                             <ListView fx:id="line1_pp5" prefHeight="39.0" prefWidth="198.0" />
@@ -150,13 +151,13 @@
                   <content>
                     <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                       <children>
-                        <HBox layoutX="14.0" layoutY="119.0" prefHeight="98.0" prefWidth="379.0">
+                        <HBox layoutX="14.0" layoutY="144.0" prefHeight="110.0" prefWidth="379.0">
                           <children>
                             <Label text="Line 2" />
                             <ListView fx:id="line2_pp4" prefHeight="39.0" prefWidth="198.0" />
                           </children>
                         </HBox>
-                        <HBox layoutX="13.0" layoutY="14.0" prefHeight="98.0" prefWidth="379.0">
+                        <HBox layoutX="13.0" layoutY="14.0" prefHeight="110.0" prefWidth="379.0">
                           <children>
                             <Label text="Line 1" />
                             <ListView fx:id="line1_pp4" prefHeight="39.0" prefWidth="198.0" />
@@ -170,13 +171,13 @@
                   <content>
                     <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                       <children>
-                        <HBox layoutX="18.0" layoutY="120.0" prefHeight="98.0" prefWidth="379.0">
+                        <HBox layoutX="18.0" layoutY="144.0" prefHeight="110.0" prefWidth="379.0">
                           <children>
                             <Label text="Line 2" />
                             <ListView fx:id="line2_pk4" prefHeight="39.0" prefWidth="198.0" />
                           </children>
                         </HBox>
-                        <HBox layoutX="18.0" layoutY="14.0" prefHeight="98.0" prefWidth="379.0">
+                        <HBox layoutX="18.0" layoutY="14.0" prefHeight="110.0" prefWidth="379.0">
                           <children>
                             <Label text="Line 1" />
                             <ListView fx:id="line1_pk4" prefHeight="39.0" prefWidth="198.0" />
@@ -190,13 +191,13 @@
                   <content>
                     <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                       <children>
-                        <HBox layoutX="18.0" layoutY="128.0" prefHeight="69.0" prefWidth="379.0">
+                        <HBox layoutX="18.0" layoutY="128.0" prefHeight="75.0" prefWidth="379.0">
                           <children>
                             <Label text="Line 2" />
                             <ListView fx:id="line2_pk3" prefHeight="39.0" prefWidth="198.0" />
                           </children>
                         </HBox>
-                        <HBox layoutX="18.0" layoutY="29.0" prefHeight="69.0" prefWidth="379.0">
+                        <HBox layoutX="18.0" layoutY="29.0" prefHeight="75.0" prefWidth="379.0">
                           <children>
                             <Label text="Line 1" />
                             <ListView fx:id="line1_pk3" prefHeight="39.0" prefWidth="198.0" />
@@ -210,7 +211,7 @@
                   <content>
                     <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                       <children>
-                        <HBox layoutX="14.0" layoutY="30.0" prefHeight="42.0" prefWidth="379.0">
+                        <HBox layoutX="14.0" layoutY="30.0" prefHeight="55.0" prefWidth="379.0">
                           <children>
                             <ListView fx:id="goalies" prefHeight="43.0" prefWidth="198.0" />
                           </children>
