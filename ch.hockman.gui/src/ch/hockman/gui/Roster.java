@@ -64,6 +64,9 @@ public class Roster implements Initializable {
 	private Label farmTeamLabel;
 
 	@FXML
+	private Label helpLabel;
+	
+	@FXML
 	private Button newContractBtn;
 
 	@FXML
@@ -86,7 +89,8 @@ public class Roster implements Initializable {
 
 	private void showForm() {
 		String s;
-		mainTeamLabel.setText(HockmanMain.currManagedTeam.getTeamName());
+		mainTeamLabel.setText(HockmanMain.currManagedTeam.getTeamName() + " --- " + Util.getModelResourceBundle().getString("L_ROSTER_FARM_HELP"));
+		helpLabel.setText(Util.getModelResourceBundle().getString("L_ROSTER_HELP"));
 		farmTeamLabel.setText(HockmanMain.currManagedTeam.getFarmName());
 
 		HockmanMain.currManagedTeam.sortPlayerPos();

@@ -49,6 +49,7 @@ public class Util {
 	
 	static public ResourceBundle getModelResourceBundle() {
 		if(bundle == null) {
+			// caching the resourcebundle, but actually it is already cached in class ResourceBundle
 			bundle = ResourceBundle.getBundle("ch.hockman.model.common.resources");
 		}
 		return bundle;

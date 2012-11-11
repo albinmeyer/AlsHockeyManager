@@ -18,6 +18,7 @@
 
 package ch.hockman.model;
 
+import ch.hockman.model.common.Util;
 import ch.hockman.model.player.Nation;
 import ch.hockman.model.player.NationPtrVector;
 import ch.hockman.model.team.Team;
@@ -47,6 +48,19 @@ public class Modus {
 
 		private int getValue() {
 			return this.i;
+		}
+		
+		public String getName() {
+			switch(i) {
+				case 0:
+					return Util.getModelResourceBundle().getString("L_MODUS_TOURNAMENT");
+				case 1:
+					return Util.getModelResourceBundle().getString("L_MODUS_TRADE");
+				case 2:
+					return Util.getModelResourceBundle().getString("L_MODUS_MONEY");
+				default:
+					return "";
+			}
 		}
 
 		public static GameType getEnumByValue(int value) {

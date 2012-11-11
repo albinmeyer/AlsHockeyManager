@@ -62,8 +62,10 @@ public class ChooseTeam implements Initializable {
 			Object[] messageArguments = {
 					HockmanMain.game.getLeague().getLeagueName(),
 					Integer.toString(HockmanMain.game.getYear()),
-					HockmanMain.game.getLeague().getModus().getNofDivisions(),
-					HockmanMain.game.getLeague().getModus().getNofTeams()
+					Integer.toString(HockmanMain.game.getLeague().getModus().getNofDivisions()),
+					Integer.toString(HockmanMain.game.getLeague().getModus().getNofTeams()),
+					HockmanMain.game.getLeague().getModus().getGameType().getName(),
+					Integer.toString(HockmanMain.game.getLeague().getModus().isTwoPoints()?2:3)
 				};
 			MessageFormat formatter = new MessageFormat("");
 			formatter.applyPattern(Util.getModelResourceBundle().getString("L_LEAGUE_DATA"));

@@ -30,9 +30,10 @@
         <VBox prefHeight="571.0" prefWidth="535.0" spacing="10.0">
           <children>
             <Label fx:id="mainTeamLabel" text="Label" />
+            <Label fx:id="helpLabel" text="Label" />
             <ListView fx:id="mainTeam" prefHeight="383.0" prefWidth="411.0" />
             <Label fx:id="farmTeamLabel" text="Label" />
-            <ListView fx:id="farmTeam" prefHeight="200.0" prefWidth="200.0" />
+            <ListView fx:id="farmTeam" prefHeight="180.0" prefWidth="200.0" />
             <HBox alignment="CENTER" prefHeight="50.0" prefWidth="411.0">
               <children>
                 <Button mnemonicParsing="false" onAction="#ok" text="Ok" />

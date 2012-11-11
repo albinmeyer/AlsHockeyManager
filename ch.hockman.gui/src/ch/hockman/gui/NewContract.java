@@ -82,9 +82,9 @@ public class NewContract implements Initializable {
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		contractYearsTxtLbl.setText(Util.getModelResourceBundle().getString("L_LBL_CONTRACT_YEARS"));
-		wageTxtLbl.setText(Util.getModelResourceBundle().getString("L_LBL_WAGE"));
+		wageTxtLbl.setText(Util.getModelResourceBundle().getString("L_LBL_WAGE_K"));
 		counterContractYearsTxtLbl.setText(Util.getModelResourceBundle().getString("L_LBL_CONTRACT_YEARS"));
-		counterWageTxtLbl.setText(Util.getModelResourceBundle().getString("L_LBL_WAGE"));
+		counterWageTxtLbl.setText(Util.getModelResourceBundle().getString("L_LBL_WAGE_K"));
 		counterContractYearsLbl.setText("");
 		counterWageLbl.setText("");
 		okBtn.setDisable(true);

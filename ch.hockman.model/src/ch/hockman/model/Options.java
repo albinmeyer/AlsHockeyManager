@@ -69,7 +69,7 @@ public class Options {
 	public static boolean showInterruptDialog;
 
 	public static void reset() {
-		playing = Options.Playing.RESULT;
+		playing = Options.Playing.COACHING;
 		showReport = true;
 		showIntermissionDialog = true;
 		showPenaltyDialog = true;
