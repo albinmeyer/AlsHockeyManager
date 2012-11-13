@@ -12449,7 +12449,7 @@ Montreal Canadiens</Career>
 			</RookiePlayer>
 			<PicPath>.\pics\swiss\zsc.png</PicPath>
 			<TeamName>ZSC Lions</TeamName>
-			<FarmName>GC</FarmName>
+			<FarmName>GCK Lions</FarmName>
 			<StadiumName>Hallenstadion</StadiumName>
 			<Capacity>11500</Capacity>
 			<DivisionId>1</DivisionId><!--Depending on kind of league, the division in which the team plays-->
@@ -12629,7 +12629,7 @@ Montreal Canadiens</Career>
 			</RookiePlayer>
 			<PicPath>.\pics\swiss\scb.png</PicPath>
 			<TeamName>Bern</TeamName>
-			<FarmName>GC</FarmName>
+			<FarmName>Burgdorf</FarmName>
 			<StadiumName>Allmend</StadiumName>
 			<Capacity>16500</Capacity>
 			<DivisionId>1</DivisionId><!--Depending on kind of league, the division in which the team plays-->
@@ -12719,7 +12719,7 @@ Montreal Canadiens</Career>
 			</RookiePlayer>
 			<PicPath>.\pics\swiss\lugano.png</PicPath>
 			<TeamName>Lugano</TeamName>
-			<FarmName>Chiasso</FarmName>
+			<FarmName>Chur</FarmName>
 			<StadiumName>Resegha</StadiumName>
 			<Capacity>8000</Capacity>
 			<DivisionId>1</DivisionId><!--Depending on kind of league, the division in which the team plays-->
@@ -12989,7 +12989,7 @@ Montreal Canadiens</Career>
 			</RookiePlayer>
 			<PicPath>.\pics\swiss\rapperswil.gif</PicPath>
 			<TeamName>Rapperswil</TeamName>
-			<FarmName>GC</FarmName>
+			<FarmName>Uzwil</FarmName>
 			<StadiumName>Lido</StadiumName>
 			<Capacity>6000</Capacity>
 			<DivisionId>1</DivisionId><!--Depending on kind of league, the division in which the team plays-->
@@ -13169,7 +13169,7 @@ Montreal Canadiens</Career>
 			</RookiePlayer>
 			<PicPath>.\pics\swiss\davos.png</PicPath>
 			<TeamName>Davos</TeamName>
-			<FarmName>Chur</FarmName>
+			<FarmName>Arosa</FarmName>
 			<StadiumName>Eishalle</StadiumName>
 			<Capacity>8000</Capacity>
 			<DivisionId>1</DivisionId><!--Depending on kind of league, the division in which the team plays-->
