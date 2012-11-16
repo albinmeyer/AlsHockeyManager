@@ -2,6 +2,7 @@ Todo Hockeymanager
 ==================
 
 Known issues:
+- Get it running also on Mac and Linux (still some Java FX problems)
 - schönere Gestaltung GUI
 - Show hourglass at long ops
 - No transfers allowed during playoffs!
@@ -9,6 +10,7 @@ Known issues:
 - shoot out: improve goals calculation after overtime (show scorers and saves)
 - Improve player AI and team AI (See todo in code)
 - Players propose prolongations of their contracts
+- Unittests (back in 1998, it was not usual to write unittests)
 - do some profiling (memory usage)
 - do some code formatting
 - fix checkstyle warnings
