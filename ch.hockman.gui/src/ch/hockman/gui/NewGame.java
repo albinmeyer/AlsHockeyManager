@@ -23,6 +23,9 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import javax.swing.JFileChooser;
+import javax.swing.filechooser.FileFilter;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -53,10 +56,35 @@ public class NewGame implements Initializable {
 
 	@FXML
 	private void ok(ActionEvent event) throws IOException {
-		FileChooser fileChooser = new FileChooser();
-		fileChooser.setInitialDirectory(new File("."));
-		fileChooser.getExtensionFilters().add(new ExtensionFilter("XML files (*.xml)", "*.xml"));		
-		File file = fileChooser.showOpenDialog(null);
+		
+//TODO enable JavaFX version of FileChooser, as soon as the Java FX bug is fixed		
+//		FileChooser fileChooser = new FileChooser();
+//		fileChooser.setInitialDirectory(new File("."));
+//		fileChooser.getExtensionFilters().add(new ExtensionFilter("XML files (*.xml)", "*.xml"));		
+//		File file = fileChooser.showOpenDialog(null);
+
+// workaround for JavaFX bug: FileChooser not running under 64 bit Windows
+// see http://www.javaworld.com/javaworld/jw-05-2012/120529-jtip-deploying-javafx.html?page=3
+	   class FileNameFilter extends FileFilter {
+	      public boolean accept(File arg0) {
+	         if(arg0.isDirectory()) return true;
+	         if(arg0.getName().endsWith("xml")) return true;
+	         return false;
+	      }
+	      public String getDescription() {
+	         return "XML files (*.xml)";
+	      }
+	   }		
+	   JFileChooser chooser = new JFileChooser(".");
+	   FileNameFilter filter = new FileNameFilter();
+	   chooser.setFileFilter(filter);
+	   int returnVal = chooser.showOpenDialog(null);
+	   File file = null;
+	   if(returnVal == JFileChooser.APPROVE_OPTION) {
+		   file=chooser.getSelectedFile();
+	   }		
+// end workaround		
+		
 		if (HockmanMain.game != null) {
 			GameCreator.instance().deInit(HockmanMain.game);
 			HockmanMain.game = null;

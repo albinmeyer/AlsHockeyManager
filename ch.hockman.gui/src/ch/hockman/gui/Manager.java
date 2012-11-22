@@ -23,6 +23,9 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import javax.swing.JFileChooser;
+import javax.swing.filechooser.FileFilter;
+
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -534,14 +537,38 @@ public class Manager implements Initializable {
 			HockmanMain.msgBoxLbl = Util.getModelResourceBundle().getString("L_WITHOUT_SAVING");
 			HockmanMain.stageHandler.showModalStageAndWait("MessageBox.fxml", Util.getModelResourceBundle().getString("L_MASKTITLE_MESSAGEBOX"));
 		}
-		FileChooser fileChooser = new FileChooser();
-		fileChooser.setInitialDirectory(new File("."));
-		fileChooser.getExtensionFilters().add(new ExtensionFilter("Game XML files (*.gam)", "*.gam"));		
-		File file = fileChooser.showOpenDialog(null);
-		if(file == null) {
+		
+//TODO enable JavaFX version of FileChooser, as soon as the Java FX bug is fixed
+//		FileChooser fileChooser = new FileChooser();
+//		fileChooser.setInitialDirectory(new File("."));
+//		fileChooser.getExtensionFilters().add(new ExtensionFilter("Game XML files (*.gam)", "*.gam"));		
+//		File file = fileChooser.showOpenDialog(null);
+		
+// workaround for JavaFX bug: FileChooser not running under 64 bit Windows
+// see http://www.javaworld.com/javaworld/jw-05-2012/120529-jtip-deploying-javafx.html?page=3
+	   class FileNameFilter extends FileFilter {
+	      public boolean accept(File arg0) {
+	         if(arg0.isDirectory()) return true;
+	         if(arg0.getName().endsWith("gam")) return true;
+	         return false;
+	      }
+	      public String getDescription() {
+	         return "GAM files (*.gam)";
+	      }
+	   }		
+	   JFileChooser chooser = new JFileChooser(".");
+	   FileNameFilter filter = new FileNameFilter();
+	   chooser.setFileFilter(filter);
+	   int returnVal = chooser.showOpenDialog(null);
+	   currGameFile = null;
+	   if(returnVal == JFileChooser.APPROVE_OPTION) {
+		   currGameFile=chooser.getSelectedFile();
+	   }				
+// end workaround		
+		
+		if(currGameFile == null) {
 			return;
 		}
-		currGameFile = file;
 		GameCreator.instance().setCurrFileName(currGameFile.getAbsolutePath());
 		try {
 			HockmanMain.game = GameCreator.instance().loadGam();
@@ -560,11 +587,39 @@ public class Manager implements Initializable {
 	private void saveGame(ActionEvent event) {
 		if (HockmanMain.game != null) {		
 			if(currGameFile == null) {
-				FileChooser fileChooser = new FileChooser();
-				fileChooser.setInitialDirectory(new File("."));
-				fileChooser.getExtensionFilters().add(new ExtensionFilter("Game XML files (*.gam)", "*.gam"));
-				currGameFile = fileChooser.showSaveDialog(null);
+//TODO enable JavaFX version of FileChooser, as soon as the Java FX bug is fixed				
+//				FileChooser fileChooser = new FileChooser();
+//				fileChooser.setInitialDirectory(new File("."));
+//				fileChooser.getExtensionFilters().add(new ExtensionFilter("Game XML files (*.gam)", "*.gam"));
+//				currGameFile = fileChooser.showSaveDialog(null);
+				
+		// workaround for JavaFX bug: FileChooser not running under 64 bit Windows
+		// see http://www.javaworld.com/javaworld/jw-05-2012/120529-jtip-deploying-javafx.html?page=3
+			   class FileNameFilter extends FileFilter {
+			      public boolean accept(File arg0) {
+			         if(arg0.isDirectory()) return true;
+			         if(arg0.getName().endsWith("gam")) return true;
+			         return false;
+			      }
+			      public String getDescription() {
+			         return "GAM files (*.gam)";
+			      }
+			   }		
+			   JFileChooser chooser = new JFileChooser(".");
+			   FileNameFilter filter = new FileNameFilter();
+			   chooser.setFileFilter(filter);
+			   int returnVal = chooser.showSaveDialog(null);
+			   currGameFile = null;
+			   if(returnVal == JFileChooser.APPROVE_OPTION) {
+				   currGameFile=chooser.getSelectedFile();
+			   }		
+		// end workaround
+			    if(currGameFile == null) {
+				   return;
+			    }
+				
 				if(!currGameFile.getName().contains(".")) {
+					// workaround JavaFX bug about not adding file extensions					
 					currGameFile = new File(currGameFile.getAbsolutePath() + ".gam");
 				}
 			}
@@ -577,11 +632,39 @@ public class Manager implements Initializable {
 	@FXML
 	private void saveAsGame(ActionEvent event) {
 		if (HockmanMain.game != null) {
-			FileChooser fileChooser = new FileChooser();
-			fileChooser.setInitialDirectory(new File("."));
-			fileChooser.getExtensionFilters().add(new ExtensionFilter("Game XML files (*.gam)", "*.gam"));			
-			currGameFile = fileChooser.showSaveDialog(null);
+//TODO enable JavaFX version of FileChooser, as soon as the Java FX bug is fixed			
+//			FileChooser fileChooser = new FileChooser();
+//			fileChooser.setInitialDirectory(new File("."));
+//			fileChooser.getExtensionFilters().add(new ExtensionFilter("Game XML files (*.gam)", "*.gam"));			
+//			currGameFile = fileChooser.showSaveDialog(null);
+			
+	// workaround for JavaFX bug: FileChooser not running under 64 bit Windows
+	// see http://www.javaworld.com/javaworld/jw-05-2012/120529-jtip-deploying-javafx.html?page=3
+		   class FileNameFilter extends FileFilter {
+		      public boolean accept(File arg0) {
+		         if(arg0.isDirectory()) return true;
+		         if(arg0.getName().endsWith("gam")) return true;
+		         return false;
+		      }
+		      public String getDescription() {
+		         return "GAM files (*.gam)";
+		      }
+		   }		
+		   JFileChooser chooser = new JFileChooser(".");
+		   FileNameFilter filter = new FileNameFilter();
+		   chooser.setFileFilter(filter);
+		   int returnVal = chooser.showSaveDialog(null);
+		   currGameFile = null;
+		   if(returnVal == JFileChooser.APPROVE_OPTION) {
+			   currGameFile=chooser.getSelectedFile();
+		   }		
+	// end workaround
+		   
+		    if(currGameFile == null) {
+			   return;
+		    }
 			if(!currGameFile.getName().contains(".")) {
+				// workaround JavaFX bug about not adding file extensions
 				currGameFile = new File(currGameFile.getAbsolutePath() + ".gam");
 			}
 			GameCreator.instance().setCurrFileName(currGameFile.getAbsolutePath());
