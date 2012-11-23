@@ -2,7 +2,9 @@ Todo Hockeymanager
 ==================
 
 Known issues:
-- Get it running also on Mac and Linux (still some Java FX problems)
+- Get it running also on Mac and Linux
+- Update the old leaguefiles from 1998 (nhl, finland, del, world)
+- Windows-Installation mit Launch4j erstellen, damit jeder User den Hockeymanager starten kann.
 - schönere Gestaltung GUI
 - Show hourglass at long ops
 - No transfers allowed during playoffs!
@@ -16,6 +18,7 @@ Known issues:
 - fix checkstyle warnings
 
 Known bugs:
+- JavaFX FileChooser crasht auf 64Bit-Windows. Darum hab ich den Swing-JFileChooser genommen. Sobald Bug bei JavaFX gefixt, wieder die JavaFX-Version nehmen für den FileChooser.
 - JavaFX will zuerst .bss file laden (callstack), bevor .css. d.h. sollte mit "javafxpackager -createbss" die css-files konvertieren!
 - Manager.modified flag: yes/no dlg, wenn das bestehende Game nicht gesaved ist
 - Replacement of players in penalty box with non penalty players is not ok !
