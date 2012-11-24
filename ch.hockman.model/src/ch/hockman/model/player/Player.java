@@ -18,6 +18,7 @@
 
 package ch.hockman.model.player;
 
+import java.io.File;
 import java.util.BitSet;
 
 import ch.hockman.model.Game;
@@ -52,7 +53,7 @@ import ch.hockman.model.team.TeamPtrDivVector;
  * 3. if loaded from lgu/gam file: UpdateContrTeams MUST be called
  *
  * Invariants:
- * „number“ must not be equal to another player’s number in same team
+ * number must not be equal to another players number in same team
  * energy, form, ... must be between 0 and 99
  * this is checked by GUI + CheckAttributes()
  * 
@@ -1254,7 +1255,7 @@ public class Player {
 		this.setName(firstName, lastName);
 		this.personal = file.getString("Personal");
 		this.career = file.getString("Career");
-		this.picPath = file.getString("PicPath");
+		this.picPath = file.getString("PicPath").replace('\\', File.separatorChar).replace('/', File.separatorChar);
 		Birthday birthday = new Birthday();
 		birthday.setDay(file.getInt("BirthdayDay"));
 		birthday.setMonth(file.getInt("BirthdayMonth"));

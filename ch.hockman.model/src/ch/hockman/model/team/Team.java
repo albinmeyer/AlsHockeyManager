@@ -18,6 +18,7 @@
 
 package ch.hockman.model.team;
 
+import java.io.File;
 import java.util.BitSet;
 import java.util.HashSet;
 import java.util.Set;
@@ -105,7 +106,7 @@ public class Team {
 	// non-coached non-league
 	private TeamMessages messages;
 	
-	public enum Sponsoring { // aggregate of „Team“
+	public enum Sponsoring {
 		GOOD(0), OK(1), POOR(2);
 		private int i;
 
@@ -1267,7 +1268,7 @@ public class Team {
 			player.updateContrTeams(this);
 			addRookiePlayer(player);
 		}
-		this.picPath = file.getString("PicPath");
+		this.picPath = file.getString("PicPath").replace('\\', File.separatorChar).replace('/', File.separatorChar);		
 		this.teamName = file.getString("TeamName");
 		this.farmName = file.getString("FarmName");
 		this.stadiumName = file.getString("StadiumName");
