@@ -123,6 +123,8 @@ public class LineUp implements Initializable {
 	@FXML
 	private Label mouseLbl;
 
+	private String dragStringWorkaround;
+	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		setupLists();
@@ -139,8 +141,14 @@ public class LineUp implements Initializable {
 
 				/* Put a string on a dragboard */
 				ClipboardContent content = new ClipboardContent();
-				content.putString(Integer.toString(playerTable
-						.getSelectionModel().getSelectedIndex()));
+				String player = Integer.toString(playerTable
+						.getSelectionModel().getSelectedIndex());
+				
+				// drag&drop does not work on Ubuntu with Oracle VM 7u9
+				//TODO remove this workaround as soon as the bug is fixed in JVM for Linux
+				dragStringWorkaround = player;
+				
+				content.putString(player);
 				db.setContent(content);
 
 				event.consume();
@@ -238,7 +246,13 @@ public class LineUp implements Initializable {
 				if (event.getGestureSource() != goalies && db.hasString()) {
 					ch.hockman.model.team.LineUp lineUp = HockmanMain.lineupTeam
 							.getLineUp();
-					int i = Integer.parseInt(db.getString());
+					String playerStr = db.getString();
+					
+					// drag&drop does not work on Ubuntu with Oracle VM 7u9
+					//TODO remove this workaround as soon as the bug is fixed in JVM for Linux
+					playerStr = dragStringWorkaround;
+
+					int i = Integer.parseInt(playerStr);
 					if (i >= 0) {
 						Player player = HockmanMain.lineupTeam.getTeamPlayer(i);
 						boolean accept = (lineUp.getG().goal1 == null || lineUp.getG().goal2 == null)
@@ -332,7 +346,13 @@ public class LineUp implements Initializable {
 				if (db.hasString()) {
 					ch.hockman.model.team.LineUp lineUp = HockmanMain.lineupTeam
 							.getLineUp();
-					int i = Integer.parseInt(db.getString());
+					String playerStr = db.getString();
+					
+					// drag&drop does not work on Ubuntu with Oracle VM 7u9
+					//TODO remove this workaround as soon as the bug is fixed in JVM for Linux
+					playerStr = dragStringWorkaround;
+
+					int i = Integer.parseInt(playerStr);
 					Player player = HockmanMain.lineupTeam.getTeamPlayer(i);
 					if (player.getPosition().getPosID() == Position.PosID.GOALIE) {
 						if (lineUp.getG().goal1 == null) {
@@ -379,14 +399,14 @@ public class LineUp implements Initializable {
 				ch.hockman.model.team.LineUp lineUp = HockmanMain.lineupTeam
 						.getLineUp();
 				switch (i) {
-				case 0:
-					lineUp.getE55().d11 = null;
-					break;
-				case 1:
-					lineUp.getE55().d12 = null;
-					break;
-				default:
-					assert (i == -1);
+					case 0:
+						lineUp.getE55().d11 = null;
+						break;
+					case 1:
+						lineUp.getE55().d12 = null;
+						break;
+					default:
+						assert (i == -1);
 				}
 				linesShow();
 			}
@@ -402,7 +422,13 @@ public class LineUp implements Initializable {
 				if (event.getGestureSource() != defense1_55 && db.hasString()) {
 					ch.hockman.model.team.LineUp lineUp = HockmanMain.lineupTeam
 							.getLineUp();
-					int i = Integer.parseInt(db.getString());
+					String playerStr = db.getString();
+					
+					// drag&drop does not work on Ubuntu with Oracle VM 7u9
+					//TODO remove this workaround as soon as the bug is fixed in JVM for Linux
+					playerStr = dragStringWorkaround;
+
+					int i = Integer.parseInt(playerStr);
 					if (i >= 0) {
 						Player player = HockmanMain.lineupTeam.getTeamPlayer(i);
 						boolean accept = (lineUp.getE55().d11 == null || lineUp.getE55().d12 == null)
@@ -446,7 +472,13 @@ public class LineUp implements Initializable {
 				if (db.hasString()) {
 					ch.hockman.model.team.LineUp lineUp = HockmanMain.lineupTeam
 							.getLineUp();
-					int i = Integer.parseInt(db.getString());
+					String playerStr = db.getString();
+					
+					// drag&drop does not work on Ubuntu with Oracle VM 7u9
+					//TODO remove this workaround as soon as the bug is fixed in JVM for Linux
+					playerStr = dragStringWorkaround;
+
+					int i = Integer.parseInt(playerStr);
 					Player player = HockmanMain.lineupTeam.getTeamPlayer(i);
 					if (lineUp.getE55().d11 == null) {
 						lineUp.getE55().d11 = player;
@@ -501,7 +533,14 @@ public class LineUp implements Initializable {
 				if (event.getGestureSource() != defense2_55 && db.hasString()) {
 					ch.hockman.model.team.LineUp lineUp = HockmanMain.lineupTeam
 							.getLineUp();
-					int i = Integer.parseInt(db.getString());
+					String playerStr = db.getString();
+					
+					// drag&drop does not work on Ubuntu with Oracle VM 7u9
+					//TODO remove this workaround as soon as the bug is fixed in JVM for Linux
+					playerStr = dragStringWorkaround;
+
+					int i = Integer.parseInt(playerStr);
+
 					if (i >= 0) {
 						Player player = HockmanMain.lineupTeam.getTeamPlayer(i);
 						boolean accept = (lineUp.getE55().d21 == null || lineUp.getE55().d22 == null)
@@ -545,7 +584,14 @@ public class LineUp implements Initializable {
 				if (db.hasString()) {
 					ch.hockman.model.team.LineUp lineUp = HockmanMain.lineupTeam
 							.getLineUp();
-					int i = Integer.parseInt(db.getString());
+					String playerStr = db.getString();
+					
+					// drag&drop does not work on Ubuntu with Oracle VM 7u9
+					//TODO remove this workaround as soon as the bug is fixed in JVM for Linux
+					playerStr = dragStringWorkaround;
+
+					int i = Integer.parseInt(playerStr);
+
 					Player player = HockmanMain.lineupTeam.getTeamPlayer(i);
 					if (lineUp.getE55().d21 == null) {
 						lineUp.getE55().d21 = player;
@@ -600,7 +646,14 @@ public class LineUp implements Initializable {
 				if (event.getGestureSource() != defense3_55 && db.hasString()) {
 					ch.hockman.model.team.LineUp lineUp = HockmanMain.lineupTeam
 							.getLineUp();
-					int i = Integer.parseInt(db.getString());
+					String playerStr = db.getString();
+					
+					// drag&drop does not work on Ubuntu with Oracle VM 7u9
+					//TODO remove this workaround as soon as the bug is fixed in JVM for Linux
+					playerStr = dragStringWorkaround;
+
+					int i = Integer.parseInt(playerStr);
+
 					if (i >= 0) {
 						Player player = HockmanMain.lineupTeam.getTeamPlayer(i);
 						boolean accept = (lineUp.getE55().d31 == null || lineUp.getE55().d32 == null)
@@ -644,7 +697,14 @@ public class LineUp implements Initializable {
 				if (db.hasString()) {
 					ch.hockman.model.team.LineUp lineUp = HockmanMain.lineupTeam
 							.getLineUp();
-					int i = Integer.parseInt(db.getString());
+					String playerStr = db.getString();
+					
+					// drag&drop does not work on Ubuntu with Oracle VM 7u9
+					//TODO remove this workaround as soon as the bug is fixed in JVM for Linux
+					playerStr = dragStringWorkaround;
+
+					int i = Integer.parseInt(playerStr);
+
 					Player player = HockmanMain.lineupTeam.getTeamPlayer(i);
 					if (lineUp.getE55().d31 == null) {
 						lineUp.getE55().d31 = player;
@@ -702,7 +762,14 @@ public class LineUp implements Initializable {
 				if (event.getGestureSource() != offense1_55 && db.hasString()) {
 					ch.hockman.model.team.LineUp lineUp = HockmanMain.lineupTeam
 							.getLineUp();
-					int i = Integer.parseInt(db.getString());
+					String playerStr = db.getString();
+					
+					// drag&drop does not work on Ubuntu with Oracle VM 7u9
+					//TODO remove this workaround as soon as the bug is fixed in JVM for Linux
+					playerStr = dragStringWorkaround;
+
+					int i = Integer.parseInt(playerStr);
+
 					if (i >= 0) {
 						Player player = HockmanMain.lineupTeam.getTeamPlayer(i);
 						boolean accept = (lineUp.getE55().lw1 == null
@@ -742,7 +809,14 @@ public class LineUp implements Initializable {
 				if (db.hasString()) {
 					ch.hockman.model.team.LineUp lineUp = HockmanMain.lineupTeam
 							.getLineUp();
-					int i = Integer.parseInt(db.getString());
+					String playerStr = db.getString();
+					
+					// drag&drop does not work on Ubuntu with Oracle VM 7u9
+					//TODO remove this workaround as soon as the bug is fixed in JVM for Linux
+					playerStr = dragStringWorkaround;
+
+					int i = Integer.parseInt(playerStr);
+
 					Player player = HockmanMain.lineupTeam.getTeamPlayer(i);
 					if (player.getPosition().getPosID() == Position.PosID.LEFTWING) {
 						Player swap = lineUp.getE55().lw1;
@@ -855,7 +929,14 @@ public class LineUp implements Initializable {
 				if (event.getGestureSource() != offense2_55 && db.hasString()) {
 					ch.hockman.model.team.LineUp lineUp = HockmanMain.lineupTeam
 							.getLineUp();
-					int i = Integer.parseInt(db.getString());
+					String playerStr = db.getString();
+					
+					// drag&drop does not work on Ubuntu with Oracle VM 7u9
+					//TODO remove this workaround as soon as the bug is fixed in JVM for Linux
+					playerStr = dragStringWorkaround;
+
+					int i = Integer.parseInt(playerStr);
+
 					if (i >= 0) {
 						Player player = HockmanMain.lineupTeam.getTeamPlayer(i);
 						boolean accept = (lineUp.getE55().lw2 == null
@@ -896,7 +977,14 @@ public class LineUp implements Initializable {
 				if (db.hasString()) {
 					ch.hockman.model.team.LineUp lineUp = HockmanMain.lineupTeam
 							.getLineUp();
-					int i = Integer.parseInt(db.getString());
+					String playerStr = db.getString();
+					
+					// drag&drop does not work on Ubuntu with Oracle VM 7u9
+					//TODO remove this workaround as soon as the bug is fixed in JVM for Linux
+					playerStr = dragStringWorkaround;
+
+					int i = Integer.parseInt(playerStr);
+
 					Player player = HockmanMain.lineupTeam.getTeamPlayer(i);
 					if (player.getPosition().getPosID() == Position.PosID.LEFTWING) {
 						Player swap = lineUp.getE55().lw2;
@@ -1009,7 +1097,14 @@ public class LineUp implements Initializable {
 				if (event.getGestureSource() != offense3_55 && db.hasString()) {
 					ch.hockman.model.team.LineUp lineUp = HockmanMain.lineupTeam
 							.getLineUp();
-					int i = Integer.parseInt(db.getString());
+					String playerStr = db.getString();
+					
+					// drag&drop does not work on Ubuntu with Oracle VM 7u9
+					//TODO remove this workaround as soon as the bug is fixed in JVM for Linux
+					playerStr = dragStringWorkaround;
+
+					int i = Integer.parseInt(playerStr);
+
 					if (i >= 0) {
 						Player player = HockmanMain.lineupTeam.getTeamPlayer(i);
 						boolean accept = (lineUp.getE55().lw3 == null
@@ -1049,7 +1144,14 @@ public class LineUp implements Initializable {
 				if (db.hasString()) {
 					ch.hockman.model.team.LineUp lineUp = HockmanMain.lineupTeam
 							.getLineUp();
-					int i = Integer.parseInt(db.getString());
+					String playerStr = db.getString();
+					
+					// drag&drop does not work on Ubuntu with Oracle VM 7u9
+					//TODO remove this workaround as soon as the bug is fixed in JVM for Linux
+					playerStr = dragStringWorkaround;
+
+					int i = Integer.parseInt(playerStr);
+
 					Player player = HockmanMain.lineupTeam.getTeamPlayer(i);
 					if (player.getPosition().getPosID() == Position.PosID.LEFTWING) {
 						Player swap = lineUp.getE55().lw3;
@@ -1162,7 +1264,14 @@ public class LineUp implements Initializable {
 				if (event.getGestureSource() != offense4_55 && db.hasString()) {
 					ch.hockman.model.team.LineUp lineUp = HockmanMain.lineupTeam
 							.getLineUp();
-					int i = Integer.parseInt(db.getString());
+					String playerStr = db.getString();
+					
+					// drag&drop does not work on Ubuntu with Oracle VM 7u9
+					//TODO remove this workaround as soon as the bug is fixed in JVM for Linux
+					playerStr = dragStringWorkaround;
+
+					int i = Integer.parseInt(playerStr);
+
 					if (i >= 0) {
 						Player player = HockmanMain.lineupTeam.getTeamPlayer(i);
 						boolean accept = (lineUp.getE55().lw4 == null
@@ -1202,7 +1311,14 @@ public class LineUp implements Initializable {
 				if (db.hasString()) {
 					ch.hockman.model.team.LineUp lineUp = HockmanMain.lineupTeam
 							.getLineUp();
-					int i = Integer.parseInt(db.getString());
+					String playerStr = db.getString();
+					
+					// drag&drop does not work on Ubuntu with Oracle VM 7u9
+					//TODO remove this workaround as soon as the bug is fixed in JVM for Linux
+					playerStr = dragStringWorkaround;
+
+					int i = Integer.parseInt(playerStr);
+
 					Player player = HockmanMain.lineupTeam.getTeamPlayer(i);
 					if (player.getPosition().getPosID() == Position.PosID.LEFTWING) {
 						Player swap = lineUp.getE55().lw4;
@@ -1318,7 +1434,14 @@ public class LineUp implements Initializable {
 				if (event.getGestureSource() != line1_pp4 && db.hasString()) {
 					ch.hockman.model.team.LineUp lineUp = HockmanMain.lineupTeam
 							.getLineUp();
-					int i = Integer.parseInt(db.getString());
+					String playerStr = db.getString();
+					
+					// drag&drop does not work on Ubuntu with Oracle VM 7u9
+					//TODO remove this workaround as soon as the bug is fixed in JVM for Linux
+					playerStr = dragStringWorkaround;
+
+					int i = Integer.parseInt(playerStr);
+
 					if (i >= 0) {
 						Player player = HockmanMain.lineupTeam.getTeamPlayer(i);
 						boolean accept = (lineUp.getPp4().d11 == null
@@ -1354,7 +1477,14 @@ public class LineUp implements Initializable {
 				if (db.hasString()) {
 					ch.hockman.model.team.LineUp lineUp = HockmanMain.lineupTeam
 							.getLineUp();
-					int i = Integer.parseInt(db.getString());
+					String playerStr = db.getString();
+					
+					// drag&drop does not work on Ubuntu with Oracle VM 7u9
+					//TODO remove this workaround as soon as the bug is fixed in JVM for Linux
+					playerStr = dragStringWorkaround;
+
+					int i = Integer.parseInt(playerStr);
+
 					Player player = HockmanMain.lineupTeam.getTeamPlayer(i);
 					if (player.getPosition().getPosID() == Position.PosID.DEFENDER) {
 						if (lineUp.getPp4().d11 == null) {
@@ -1498,7 +1628,14 @@ public class LineUp implements Initializable {
 				if (event.getGestureSource() != line2_pp4 && db.hasString()) {
 					ch.hockman.model.team.LineUp lineUp = HockmanMain.lineupTeam
 							.getLineUp();
-					int i = Integer.parseInt(db.getString());
+					String playerStr = db.getString();
+					
+					// drag&drop does not work on Ubuntu with Oracle VM 7u9
+					//TODO remove this workaround as soon as the bug is fixed in JVM for Linux
+					playerStr = dragStringWorkaround;
+
+					int i = Integer.parseInt(playerStr);
+
 					if (i >= 0) {
 						Player player = HockmanMain.lineupTeam.getTeamPlayer(i);
 						boolean accept = (lineUp.getPp4().d21 == null
@@ -1534,7 +1671,14 @@ public class LineUp implements Initializable {
 				if (db.hasString()) {
 					ch.hockman.model.team.LineUp lineUp = HockmanMain.lineupTeam
 							.getLineUp();
-					int i = Integer.parseInt(db.getString());
+					String playerStr = db.getString();
+					
+					// drag&drop does not work on Ubuntu with Oracle VM 7u9
+					//TODO remove this workaround as soon as the bug is fixed in JVM for Linux
+					playerStr = dragStringWorkaround;
+
+					int i = Integer.parseInt(playerStr);
+
 					Player player = HockmanMain.lineupTeam.getTeamPlayer(i);
 					if (player.getPosition().getPosID() == Position.PosID.DEFENDER) {
 						if (lineUp.getPp4().d21 == null) {
@@ -1681,7 +1825,14 @@ public class LineUp implements Initializable {
 				if (event.getGestureSource() != line1_pp5 && db.hasString()) {
 					ch.hockman.model.team.LineUp lineUp = HockmanMain.lineupTeam
 							.getLineUp();
-					int i = Integer.parseInt(db.getString());
+					String playerStr = db.getString();
+					
+					// drag&drop does not work on Ubuntu with Oracle VM 7u9
+					//TODO remove this workaround as soon as the bug is fixed in JVM for Linux
+					playerStr = dragStringWorkaround;
+
+					int i = Integer.parseInt(playerStr);
+
 					if (i >= 0) {
 						Player player = HockmanMain.lineupTeam.getTeamPlayer(i);
 						boolean accept = (lineUp.getPp5().d11 == null
@@ -1720,7 +1871,14 @@ public class LineUp implements Initializable {
 				if (db.hasString()) {
 					ch.hockman.model.team.LineUp lineUp = HockmanMain.lineupTeam
 							.getLineUp();
-					int i = Integer.parseInt(db.getString());
+					String playerStr = db.getString();
+					
+					// drag&drop does not work on Ubuntu with Oracle VM 7u9
+					//TODO remove this workaround as soon as the bug is fixed in JVM for Linux
+					playerStr = dragStringWorkaround;
+
+					int i = Integer.parseInt(playerStr);
+
 					Player player = HockmanMain.lineupTeam.getTeamPlayer(i);
 					if (player.getPosition().getPosID() == Position.PosID.DEFENDER
 							|| player.getPosition().getPosID() == Position.PosID.GOALIE) {
@@ -1879,7 +2037,14 @@ public class LineUp implements Initializable {
 				if (event.getGestureSource() != line2_pp5 && db.hasString()) {
 					ch.hockman.model.team.LineUp lineUp = HockmanMain.lineupTeam
 							.getLineUp();
-					int i = Integer.parseInt(db.getString());
+					String playerStr = db.getString();
+					
+					// drag&drop does not work on Ubuntu with Oracle VM 7u9
+					//TODO remove this workaround as soon as the bug is fixed in JVM for Linux
+					playerStr = dragStringWorkaround;
+
+					int i = Integer.parseInt(playerStr);
+
 					if (i >= 0) {
 						Player player = HockmanMain.lineupTeam.getTeamPlayer(i);
 						boolean accept = (lineUp.getPp5().d21 == null
@@ -1917,7 +2082,14 @@ public class LineUp implements Initializable {
 				if (db.hasString()) {
 					ch.hockman.model.team.LineUp lineUp = HockmanMain.lineupTeam
 							.getLineUp();
-					int i = Integer.parseInt(db.getString());
+					String playerStr = db.getString();
+					
+					// drag&drop does not work on Ubuntu with Oracle VM 7u9
+					//TODO remove this workaround as soon as the bug is fixed in JVM for Linux
+					playerStr = dragStringWorkaround;
+
+					int i = Integer.parseInt(playerStr);
+
 					Player player = HockmanMain.lineupTeam.getTeamPlayer(i);
 					if (player.getPosition().getPosID() == Position.PosID.DEFENDER
 							|| player.getPosition().getPosID() == Position.PosID.GOALIE) {
@@ -2070,7 +2242,14 @@ public class LineUp implements Initializable {
 				if (event.getGestureSource() != line1_33 && db.hasString()) {
 					ch.hockman.model.team.LineUp lineUp = HockmanMain.lineupTeam
 							.getLineUp();
-					int i = Integer.parseInt(db.getString());
+					String playerStr = db.getString();
+					
+					// drag&drop does not work on Ubuntu with Oracle VM 7u9
+					//TODO remove this workaround as soon as the bug is fixed in JVM for Linux
+					playerStr = dragStringWorkaround;
+
+					int i = Integer.parseInt(playerStr);
+
 					if (i >= 0) {
 						Player player = HockmanMain.lineupTeam.getTeamPlayer(i);
 						boolean accept = (lineUp.getE33().d11 == null
@@ -2104,7 +2283,14 @@ public class LineUp implements Initializable {
 				if (db.hasString()) {
 					ch.hockman.model.team.LineUp lineUp = HockmanMain.lineupTeam
 							.getLineUp();
-					int i = Integer.parseInt(db.getString());
+					String playerStr = db.getString();
+					
+					// drag&drop does not work on Ubuntu with Oracle VM 7u9
+					//TODO remove this workaround as soon as the bug is fixed in JVM for Linux
+					playerStr = dragStringWorkaround;
+
+					int i = Integer.parseInt(playerStr);
+
 					Player player = HockmanMain.lineupTeam.getTeamPlayer(i);
 					if (player.getPosition().getPosID() == Position.PosID.DEFENDER) {
 						if (lineUp.getE33().d11 == null) {
@@ -2213,7 +2399,14 @@ public class LineUp implements Initializable {
 				if (event.getGestureSource() != line2_33 && db.hasString()) {
 					ch.hockman.model.team.LineUp lineUp = HockmanMain.lineupTeam
 							.getLineUp();
-					int i = Integer.parseInt(db.getString());
+					String playerStr = db.getString();
+					
+					// drag&drop does not work on Ubuntu with Oracle VM 7u9
+					//TODO remove this workaround as soon as the bug is fixed in JVM for Linux
+					playerStr = dragStringWorkaround;
+
+					int i = Integer.parseInt(playerStr);
+
 					if (i >= 0) {
 						Player player = HockmanMain.lineupTeam.getTeamPlayer(i);
 						boolean accept = (lineUp.getE33().d21 == null
@@ -2247,7 +2440,14 @@ public class LineUp implements Initializable {
 				if (db.hasString()) {
 					ch.hockman.model.team.LineUp lineUp = HockmanMain.lineupTeam
 							.getLineUp();
-					int i = Integer.parseInt(db.getString());
+					String playerStr = db.getString();
+					
+					// drag&drop does not work on Ubuntu with Oracle VM 7u9
+					//TODO remove this workaround as soon as the bug is fixed in JVM for Linux
+					playerStr = dragStringWorkaround;
+
+					int i = Integer.parseInt(playerStr);
+
 					Player player = HockmanMain.lineupTeam.getTeamPlayer(i);
 					if (player.getPosition().getPosID() == Position.PosID.DEFENDER) {
 						if (lineUp.getE33().d21 == null) {
@@ -2359,7 +2559,14 @@ public class LineUp implements Initializable {
 				if (event.getGestureSource() != line1_44 && db.hasString()) {
 					ch.hockman.model.team.LineUp lineUp = HockmanMain.lineupTeam
 							.getLineUp();
-					int i = Integer.parseInt(db.getString());
+					String playerStr = db.getString();
+					
+					// drag&drop does not work on Ubuntu with Oracle VM 7u9
+					//TODO remove this workaround as soon as the bug is fixed in JVM for Linux
+					playerStr = dragStringWorkaround;
+
+					int i = Integer.parseInt(playerStr);
+
 					if (i >= 0) {
 						Player player = HockmanMain.lineupTeam.getTeamPlayer(i);
 						boolean accept = (lineUp.getE44().d11 == null
@@ -2395,7 +2602,14 @@ public class LineUp implements Initializable {
 				if (db.hasString()) {
 					ch.hockman.model.team.LineUp lineUp = HockmanMain.lineupTeam
 							.getLineUp();
-					int i = Integer.parseInt(db.getString());
+					String playerStr = db.getString();
+					
+					// drag&drop does not work on Ubuntu with Oracle VM 7u9
+					//TODO remove this workaround as soon as the bug is fixed in JVM for Linux
+					playerStr = dragStringWorkaround;
+
+					int i = Integer.parseInt(playerStr);
+
 					Player player = HockmanMain.lineupTeam.getTeamPlayer(i);
 					if (player.getPosition().getPosID() == Position.PosID.DEFENDER) {
 						if (lineUp.getE44().d11 == null) {
@@ -2539,7 +2753,14 @@ public class LineUp implements Initializable {
 				if (event.getGestureSource() != line2_44 && db.hasString()) {
 					ch.hockman.model.team.LineUp lineUp = HockmanMain.lineupTeam
 							.getLineUp();
-					int i = Integer.parseInt(db.getString());
+					String playerStr = db.getString();
+					
+					// drag&drop does not work on Ubuntu with Oracle VM 7u9
+					//TODO remove this workaround as soon as the bug is fixed in JVM for Linux
+					playerStr = dragStringWorkaround;
+
+					int i = Integer.parseInt(playerStr);
+
 					if (i >= 0) {
 						Player player = HockmanMain.lineupTeam.getTeamPlayer(i);
 						boolean accept = (lineUp.getE44().d21 == null
@@ -2575,7 +2796,14 @@ public class LineUp implements Initializable {
 				if (db.hasString()) {
 					ch.hockman.model.team.LineUp lineUp = HockmanMain.lineupTeam
 							.getLineUp();
-					int i = Integer.parseInt(db.getString());
+					String playerStr = db.getString();
+					
+					// drag&drop does not work on Ubuntu with Oracle VM 7u9
+					//TODO remove this workaround as soon as the bug is fixed in JVM for Linux
+					playerStr = dragStringWorkaround;
+
+					int i = Integer.parseInt(playerStr);
+
 					Player player = HockmanMain.lineupTeam.getTeamPlayer(i);
 					if (player.getPosition().getPosID() == Position.PosID.DEFENDER) {
 						if (lineUp.getE44().d21 == null) {
@@ -2719,7 +2947,14 @@ public class LineUp implements Initializable {
 				if (event.getGestureSource() != line1_pk4 && db.hasString()) {
 					ch.hockman.model.team.LineUp lineUp = HockmanMain.lineupTeam
 							.getLineUp();
-					int i = Integer.parseInt(db.getString());
+					String playerStr = db.getString();
+					
+					// drag&drop does not work on Ubuntu with Oracle VM 7u9
+					//TODO remove this workaround as soon as the bug is fixed in JVM for Linux
+					playerStr = dragStringWorkaround;
+
+					int i = Integer.parseInt(playerStr);
+
 					if (i >= 0) {
 						Player player = HockmanMain.lineupTeam.getTeamPlayer(i);
 						boolean accept = (lineUp.getPk4().d11 == null
@@ -2755,7 +2990,14 @@ public class LineUp implements Initializable {
 				if (db.hasString()) {
 					ch.hockman.model.team.LineUp lineUp = HockmanMain.lineupTeam
 							.getLineUp();
-					int i = Integer.parseInt(db.getString());
+					String playerStr = db.getString();
+					
+					// drag&drop does not work on Ubuntu with Oracle VM 7u9
+					//TODO remove this workaround as soon as the bug is fixed in JVM for Linux
+					playerStr = dragStringWorkaround;
+
+					int i = Integer.parseInt(playerStr);
+
 					Player player = HockmanMain.lineupTeam.getTeamPlayer(i);
 					if (player.getPosition().getPosID() == Position.PosID.DEFENDER) {
 						if (lineUp.getPk4().d11 == null) {
@@ -2899,7 +3141,14 @@ public class LineUp implements Initializable {
 				if (event.getGestureSource() != line2_pk4 && db.hasString()) {
 					ch.hockman.model.team.LineUp lineUp = HockmanMain.lineupTeam
 							.getLineUp();
-					int i = Integer.parseInt(db.getString());
+					String playerStr = db.getString();
+					
+					// drag&drop does not work on Ubuntu with Oracle VM 7u9
+					//TODO remove this workaround as soon as the bug is fixed in JVM for Linux
+					playerStr = dragStringWorkaround;
+
+					int i = Integer.parseInt(playerStr);
+
 					if (i >= 0) {
 						Player player = HockmanMain.lineupTeam.getTeamPlayer(i);
 						boolean accept = (lineUp.getPk4().d21 == null
@@ -2935,7 +3184,14 @@ public class LineUp implements Initializable {
 				if (db.hasString()) {
 					ch.hockman.model.team.LineUp lineUp = HockmanMain.lineupTeam
 							.getLineUp();
-					int i = Integer.parseInt(db.getString());
+					String playerStr = db.getString();
+					
+					// drag&drop does not work on Ubuntu with Oracle VM 7u9
+					//TODO remove this workaround as soon as the bug is fixed in JVM for Linux
+					playerStr = dragStringWorkaround;
+
+					int i = Integer.parseInt(playerStr);
+
 					Player player = HockmanMain.lineupTeam.getTeamPlayer(i);
 					if (player.getPosition().getPosID() == Position.PosID.DEFENDER) {
 						if (lineUp.getPk4().d21 == null) {
@@ -3076,7 +3332,14 @@ public class LineUp implements Initializable {
 				if (event.getGestureSource() != line1_pk3 && db.hasString()) {
 					ch.hockman.model.team.LineUp lineUp = HockmanMain.lineupTeam
 							.getLineUp();
-					int i = Integer.parseInt(db.getString());
+					String playerStr = db.getString();
+					
+					// drag&drop does not work on Ubuntu with Oracle VM 7u9
+					//TODO remove this workaround as soon as the bug is fixed in JVM for Linux
+					playerStr = dragStringWorkaround;
+
+					int i = Integer.parseInt(playerStr);
+
 					if (i >= 0) {
 						Player player = HockmanMain.lineupTeam.getTeamPlayer(i);
 						boolean accept = (lineUp.getPk3().d11 == null
@@ -3110,7 +3373,14 @@ public class LineUp implements Initializable {
 				if (db.hasString()) {
 					ch.hockman.model.team.LineUp lineUp = HockmanMain.lineupTeam
 							.getLineUp();
-					int i = Integer.parseInt(db.getString());
+					String playerStr = db.getString();
+					
+					// drag&drop does not work on Ubuntu with Oracle VM 7u9
+					//TODO remove this workaround as soon as the bug is fixed in JVM for Linux
+					playerStr = dragStringWorkaround;
+
+					int i = Integer.parseInt(playerStr);
+
 					Player player = HockmanMain.lineupTeam.getTeamPlayer(i);
 					if (player.getPosition().getPosID() == Position.PosID.DEFENDER) {
 						if (lineUp.getPk3().d11 == null) {
@@ -3219,7 +3489,14 @@ public class LineUp implements Initializable {
 				if (event.getGestureSource() != line2_pk3 && db.hasString()) {
 					ch.hockman.model.team.LineUp lineUp = HockmanMain.lineupTeam
 							.getLineUp();
-					int i = Integer.parseInt(db.getString());
+					String playerStr = db.getString();
+					
+					// drag&drop does not work on Ubuntu with Oracle VM 7u9
+					//TODO remove this workaround as soon as the bug is fixed in JVM for Linux
+					playerStr = dragStringWorkaround;
+
+					int i = Integer.parseInt(playerStr);
+
 					if (i >= 0) {
 						Player player = HockmanMain.lineupTeam.getTeamPlayer(i);
 						boolean accept = (lineUp.getPk3().d21 == null
@@ -3253,7 +3530,14 @@ public class LineUp implements Initializable {
 				if (db.hasString()) {
 					ch.hockman.model.team.LineUp lineUp = HockmanMain.lineupTeam
 							.getLineUp();
-					int i = Integer.parseInt(db.getString());
+					String playerStr = db.getString();
+					
+					// drag&drop does not work on Ubuntu with Oracle VM 7u9
+					//TODO remove this workaround as soon as the bug is fixed in JVM for Linux
+					playerStr = dragStringWorkaround;
+
+					int i = Integer.parseInt(playerStr);
+
 					Player player = HockmanMain.lineupTeam.getTeamPlayer(i);
 					if (player.getPosition().getPosID() == Position.PosID.DEFENDER) {
 						if (lineUp.getPk3().d21 == null) {
