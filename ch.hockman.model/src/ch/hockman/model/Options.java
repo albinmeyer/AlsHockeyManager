@@ -72,12 +72,12 @@ public class Options {
 		playing = Options.Playing.COACHING;
 		showReport = true;
 		showIntermissionDialog = true;
-		showPenaltyDialog = true;
-		showScoringDialog = true;
-		showInjuryDialog = true;
+		showPenaltyDialog = false;
+		showScoringDialog = false;
+		showInjuryDialog = false;
 		showInterruptDialog = false;
 		level = Options.Level.NORMAL;
-		speed = 10;
+		speed = 7;
 	}
 	
 	static void load(GameLeagueFile xmlFile) {
