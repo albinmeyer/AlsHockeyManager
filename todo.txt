@@ -2,7 +2,6 @@ Todo Hockeymanager
 ==================
 
 Known issues:
-- Test on Mac. Ubuntu, WinXP (32bit) and Win7 (64bit) are ok.
 - Update the old leaguefiles from 1998 (nhl, finland, del, world)
 - Windows-Installation mit Launch4j erstellen, damit jeder User den Hockeymanager starten kann.
 - schönere Gestaltung GUI
@@ -20,7 +19,7 @@ Known issues:
 Known bugs:
 - e(fx)clipse erzeugt noch kein korrektes Manifest-File (MANIFEST.MF) für JavaFX, überschreibt ein allfällig manuell erstelltes File sogar mit einem falschen File, darum erzeuge ich es ausserhalb Eclipse jeweils mit Netbeans.
 - Oracle JavaVM auf Linux x86 gibt einen leeren String im JavaFX-DragBoard. Auf Windows funktioniert das Drag+Drop hingegen einwandfrei. Darum hab ich als Workaround den String in einer Membervariable gehalten im File LineUp.java
-- JavaFX FileChooser crasht auf 64Bit-Windows. Darum hab ich den Swing-JFileChooser genommen. Sobald Bug bei JavaFX gefixt, wieder die JavaFX-Version nehmen für den FileChooser.
+- JavaFX FileChooser crasht auf 64Bit-Windows. Darum hab ich den Swing-JFileChooser genommen. Sobald Bug bei JavaFX gefixt, wieder die JavaFX-Version nehmen für den FileChooser. ABER: auf Mac crasht der JFileChooser!!! Sollte momentan je nach Plattform dynamisch (zur Laufzeit) den entsprechenden FileChooser wählen!
 - JavaFX will zuerst .bss file laden (callstack), bevor .css. d.h. sollte mit "javafxpackager -createbss" die css-files konvertieren!
 - Manager.modified flag: yes/no dlg, wenn das bestehende Game nicht gesaved ist
 - Replacement of players in penalty box with non penalty players is not ok !
@@ -34,3 +33,5 @@ Known bugs:
 - LineUp AI: double engagement of same player in diff. blocks
 - LineUp AI: also during match (don’t take new foreigners during match)
 - LineUp GUI during match: don’t take new foreigners
+- Free Agent is 0 fee, but cannot be transfered to a team with cash < 0. This should be possible!
+- Playerdetails of a free agent who signed for next season does not pop up. I think, a free agent should sign always immediately, not for next season.
