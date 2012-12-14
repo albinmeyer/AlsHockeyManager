@@ -538,34 +538,33 @@ public class Manager implements Initializable {
 			HockmanMain.stageHandler.showModalStageAndWait("MessageBox.fxml", Util.getModelResourceBundle().getString("L_MASKTITLE_MESSAGEBOX"));
 		}
 		
-//TODO enable JavaFX version of FileChooser, as soon as the Java FX bug is fixed
-//		FileChooser fileChooser = new FileChooser();
-//		fileChooser.setInitialDirectory(new File("."));
-//		fileChooser.getExtensionFilters().add(new ExtensionFilter("Game XML files (*.gam)", "*.gam"));		
-//		File file = fileChooser.showOpenDialog(null);
-		
-// workaround for JavaFX bug: FileChooser not running under 64 bit Windows
-// see http://www.javaworld.com/javaworld/jw-05-2012/120529-jtip-deploying-javafx.html?page=3
-	   class FileNameFilter extends FileFilter {
-	      public boolean accept(File arg0) {
-	         if(arg0.isDirectory()) return true;
-	         if(arg0.getName().endsWith("gam")) return true;
-	         return false;
-	      }
-	      public String getDescription() {
-	         return "GAM files (*.gam)";
-	      }
-	   }		
-	   JFileChooser chooser = new JFileChooser(".");
-	   FileNameFilter filter = new FileNameFilter();
-	   chooser.setFileFilter(filter);
-	   int returnVal = chooser.showOpenDialog(null);
-	   currGameFile = null;
-	   if(returnVal == JFileChooser.APPROVE_OPTION) {
-		   currGameFile=chooser.getSelectedFile();
-	   }				
-// end workaround		
-		
+		if(!needsFileChooserWorkaround()) {
+			FileChooser fileChooser = new FileChooser();
+			fileChooser.setInitialDirectory(new File("."));
+			fileChooser.getExtensionFilters().add(new ExtensionFilter("Game XML files (*.gam)", "*.gam"));		
+			currGameFile = fileChooser.showOpenDialog(null);
+		} else {
+			// TODO remove workaround for JavaFX bug: FileChooser not running under 64 bit Windows
+			// see http://www.javaworld.com/javaworld/jw-05-2012/120529-jtip-deploying-javafx.html?page=3
+		   class FileNameFilter extends FileFilter {
+		      public boolean accept(File arg0) {
+		         if(arg0.isDirectory()) return true;
+		         if(arg0.getName().endsWith("gam")) return true;
+		         return false;
+		      }
+		      public String getDescription() {
+		         return "GAM files (*.gam)";
+		      }
+		   }		
+		   JFileChooser chooser = new JFileChooser(".");
+		   FileNameFilter filter = new FileNameFilter();
+		   chooser.setFileFilter(filter);
+		   int returnVal = chooser.showOpenDialog(null);
+		   currGameFile = null;
+		   if(returnVal == JFileChooser.APPROVE_OPTION) {
+			   currGameFile=chooser.getSelectedFile();
+		   }				
+		}
 		if(currGameFile == null) {
 			return;
 		}
@@ -587,33 +586,33 @@ public class Manager implements Initializable {
 	private void saveGame(ActionEvent event) {
 		if (HockmanMain.game != null) {		
 			if(currGameFile == null) {
-//TODO enable JavaFX version of FileChooser, as soon as the Java FX bug is fixed				
-//				FileChooser fileChooser = new FileChooser();
-//				fileChooser.setInitialDirectory(new File("."));
-//				fileChooser.getExtensionFilters().add(new ExtensionFilter("Game XML files (*.gam)", "*.gam"));
-//				currGameFile = fileChooser.showSaveDialog(null);
-				
-		// workaround for JavaFX bug: FileChooser not running under 64 bit Windows
-		// see http://www.javaworld.com/javaworld/jw-05-2012/120529-jtip-deploying-javafx.html?page=3
-			   class FileNameFilter extends FileFilter {
-			      public boolean accept(File arg0) {
-			         if(arg0.isDirectory()) return true;
-			         if(arg0.getName().endsWith("gam")) return true;
-			         return false;
-			      }
-			      public String getDescription() {
-			         return "GAM files (*.gam)";
-			      }
-			   }		
-			   JFileChooser chooser = new JFileChooser(".");
-			   FileNameFilter filter = new FileNameFilter();
-			   chooser.setFileFilter(filter);
-			   int returnVal = chooser.showSaveDialog(null);
-			   currGameFile = null;
-			   if(returnVal == JFileChooser.APPROVE_OPTION) {
-				   currGameFile=chooser.getSelectedFile();
-			   }		
-		// end workaround
+				if(!needsFileChooserWorkaround()) {				
+					FileChooser fileChooser = new FileChooser();
+					fileChooser.setInitialDirectory(new File("."));
+					fileChooser.getExtensionFilters().add(new ExtensionFilter("Game XML files (*.gam)", "*.gam"));
+					currGameFile = fileChooser.showSaveDialog(null);
+				} else {
+					// TODO remove workaround for JavaFX bug: FileChooser not running under 64 bit Windows
+					// see http://www.javaworld.com/javaworld/jw-05-2012/120529-jtip-deploying-javafx.html?page=3
+				   class FileNameFilter extends FileFilter {
+				      public boolean accept(File arg0) {
+				         if(arg0.isDirectory()) return true;
+				         if(arg0.getName().endsWith("gam")) return true;
+				         return false;
+				      }
+				      public String getDescription() {
+				         return "GAM files (*.gam)";
+				      }
+				   }		
+				   JFileChooser chooser = new JFileChooser(".");
+				   FileNameFilter filter = new FileNameFilter();
+				   chooser.setFileFilter(filter);
+				   int returnVal = chooser.showSaveDialog(null);
+				   currGameFile = null;
+				   if(returnVal == JFileChooser.APPROVE_OPTION) {
+					   currGameFile=chooser.getSelectedFile();
+				   }
+				}
 			    if(currGameFile == null) {
 				   return;
 			    }
@@ -632,34 +631,33 @@ public class Manager implements Initializable {
 	@FXML
 	private void saveAsGame(ActionEvent event) {
 		if (HockmanMain.game != null) {
-//TODO enable JavaFX version of FileChooser, as soon as the Java FX bug is fixed			
-//			FileChooser fileChooser = new FileChooser();
-//			fileChooser.setInitialDirectory(new File("."));
-//			fileChooser.getExtensionFilters().add(new ExtensionFilter("Game XML files (*.gam)", "*.gam"));			
-//			currGameFile = fileChooser.showSaveDialog(null);
-			
-	// workaround for JavaFX bug: FileChooser not running under 64 bit Windows
-	// see http://www.javaworld.com/javaworld/jw-05-2012/120529-jtip-deploying-javafx.html?page=3
-		   class FileNameFilter extends FileFilter {
-		      public boolean accept(File arg0) {
-		         if(arg0.isDirectory()) return true;
-		         if(arg0.getName().endsWith("gam")) return true;
-		         return false;
-		      }
-		      public String getDescription() {
-		         return "GAM files (*.gam)";
-		      }
-		   }		
-		   JFileChooser chooser = new JFileChooser(".");
-		   FileNameFilter filter = new FileNameFilter();
-		   chooser.setFileFilter(filter);
-		   int returnVal = chooser.showSaveDialog(null);
-		   currGameFile = null;
-		   if(returnVal == JFileChooser.APPROVE_OPTION) {
-			   currGameFile=chooser.getSelectedFile();
-		   }		
-	// end workaround
-		   
+			if(!needsFileChooserWorkaround()) {			
+				FileChooser fileChooser = new FileChooser();
+				fileChooser.setInitialDirectory(new File("."));
+				fileChooser.getExtensionFilters().add(new ExtensionFilter("Game XML files (*.gam)", "*.gam"));			
+				currGameFile = fileChooser.showSaveDialog(null);
+			} else {			
+				// TODO remove workaround for JavaFX bug: FileChooser not running under 64 bit Windows
+				// see http://www.javaworld.com/javaworld/jw-05-2012/120529-jtip-deploying-javafx.html?page=3
+			   class FileNameFilter extends FileFilter {
+			      public boolean accept(File arg0) {
+			         if(arg0.isDirectory()) return true;
+			         if(arg0.getName().endsWith("gam")) return true;
+			         return false;
+			      }
+			      public String getDescription() {
+			         return "GAM files (*.gam)";
+			      }
+			   }		
+			   JFileChooser chooser = new JFileChooser(".");
+			   FileNameFilter filter = new FileNameFilter();
+			   chooser.setFileFilter(filter);
+			   int returnVal = chooser.showSaveDialog(null);
+			   currGameFile = null;
+			   if(returnVal == JFileChooser.APPROVE_OPTION) {
+				   currGameFile=chooser.getSelectedFile();
+			   }		
+			}
 		    if(currGameFile == null) {
 			   return;
 		    }
@@ -703,4 +701,14 @@ public class Manager implements Initializable {
 		HockmanMain.stageHandler.showModalStageAndWait("Options.fxml", Util.getModelResourceBundle().getString("L_MASKTITLE_OPTIONS"));
 	}
 
+	private boolean needsFileChooserWorkaround() {
+        String osName = System.getProperty("os.name");
+        if(osName.indexOf("Mac") < 0) {
+        	// it's not a Mac, it needs a JFileChooser, because JavaFX FileChooser crashes at least on Win64
+        	return true;
+        } else {
+        	// on Mac, JFileChooser crasheds, needs JavaFX FileChooser
+        	return false;
+        }
+	}
 }
