@@ -1,7 +1,157 @@
 .root {
-	-fx-font: 16pt "Cambria Bold";
+	-fx-font: 14pt "Segoe UI Semibold";
+}
+
+#AnchorPane { 
+    -fx-background-color: #838B8B;
+}
+
+.radio-button {
+    -fx-font-size: 14pt;
+    -fx-font-family: "Segoe UI Semibold";
+    -fx-text-fill: black;
+    -fx-opacity: 0.6;
+}
+
+.check-box {
+    -fx-font-size: 14pt;
+    -fx-font-family: "Segoe UI Semibold";
+    -fx-text-fill: black;
+    -fx-opacity: 0.6;
+}
+
+.label {
+    -fx-font-size: 14pt;
+    -fx-font-family: "Segoe UI Semibold";
+    -fx-text-fill: black;
+    -fx-opacity: 0.6;
+}
+
+.label-bright {
+    -fx-font-size: 14pt;
+    -fx-font-family: "Segoe UI Semibold";
+    -fx-text-fill: white;
+    -fx-opacity: 1;
+}
+
+.label-header {
+    -fx-font-size: 32pt;
+    -fx-font-family: "Segoe UI Light";
+    -fx-text-fill: white;
+    -fx-opacity: 1;
+}
+
+.list-cell:filled:selected:focused, .list-cell:filled:selected {
+    -fx-background-color: linear-gradient(#328BDB 0%, #207BCF 25%, #1973C9 75%, #0A65BF 100%);
+    -fx-text-fill: white;
+}
+
+.list-cell:even {
+    -fx-background-color: #B8860B; /* darkgoldenrod */
+}
+
+.list-cell:odd {
+    -fx-background-color: #36648B; /* SteelBlue4 */
+}
+
+.list-cell:filled:hover {
+    -fx-background-color: #0093ff;
+    -fx-text-fill: white;
+}
+
+#Content {
+    -fx-background-color: derive(#838B8B,20%);
+    -fx-selection-bar: derive(-fx-background,-7%);
+}
+
+.menu-bar {
+    -fx-background-color: derive(#838B8B,20%);
+    -fx-selection-bar: derive(-fx-background,-7%);
+}
+
+.menu-bar .label {
+    -fx-font-size: 14pt;
+    -fx-font-family: "Segoe UI Semibold";
+    -fx-text-fill: black;    
+}
+
+.menu-item .label{
+    -fx-font-size: 14pt;
+    -fx-font-family: "Segoe UI Semibold";
+    -fx-text-fill: black;    
+}
+
+.text-field .text-area .text-input {
+    -fx-font-size: 14pt;
+    -fx-background-color: #4F94CD; /* SteelBlue4 */    
+    -fx-font-family: "Segoe UI Semibold";
+}
+
+.text-area {
+    -fx-font-size: 14pt;
+    -fx-background-color: #36648B; /* SteelBlue4 */    
+    -fx-font-family: "Segoe UI Semibold";
+}
+
+.text-input {
+    -fx-font-size: 14pt;
+    -fx-background-color: #36648B; /* SteelBlue4 */    
+    -fx-font-family: "Segoe UI Semibold";
+}
+
+
+
+/* 
+ * Metro style Push Button
+ * Author: Pedro Duque Vieira
+ * http://pixelduke.wordpress.com/2012/10/23/jmetro-windows-8-controls-on-java/
+ */
+.button {
+    -fx-padding: 5 22 5 22;
+    -fx-border-color: #e2e2e2;
+    -fx-border-width: 2;
+    -fx-background-radius: 0;
+    -fx-background-color: #5E5E5E;
+    -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-font-size: 14pt;
+    -fx-text-fill: #d8d8d8;
+    -fx-background-insets: 0 0 0 0, 0, 1, 2;
+}
+
+.button:hover {
+    -fx-background-color: #3a3a3a;
+}
+
+.button:pressed, .button:default:hover:pressed {
+  -fx-background-color: white;
+  -fx-text-fill: #1d1d1d;
+}
+
+.button:focused {
+    -fx-border-color: white, white;
+    -fx-border-width: 1, 1;
+    -fx-border-style: solid, segments(1, 1);
+    -fx-border-radius: 0, 0;
+    -fx-border-insets: 1 1 1 1, 0;
+}
+
+.button:disabled, .button:default:disabled {
+    -fx-opacity: 0.4;
+    -fx-background-color: #1d1d1d;
+    -fx-text-fill: white;
+}
+
+.button:default {
+    -fx-background-color: -fx-focus-color;
+    -fx-text-fill: #ffffff;
+}
+
+.button:default:hover {
+    -fx-background-color: derive(-fx-focus-color,30%);
 }
 
 .sortListButton {
-	-fx-font: 11pt "Cambria Bold";	
+	-fx-border-width: 1;
+	-fx-font: 12pt "Segoe UI Semibold";
+	-fx-padding: 1 2 1 2;
 }

@@ -357,8 +357,11 @@ public class PlayerDetails implements Initializable {
 
 		Motivation motivation = HockmanMain.currPlayer.getMotivation();
 		motivationText.setText(motivation.getReasonText());
+		motivationText.setEditable(false);
 		personalText.setText(HockmanMain.currPlayer.getPersonal());
+		personalText.setEditable(false);
 		careerText.setText(HockmanMain.currPlayer.getCareer());
+		careerText.setEditable(false);
 	}
 
 	@FXML
