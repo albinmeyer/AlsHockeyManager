@@ -17,7 +17,6 @@ Known issues:
 - fix checkstyle warnings
 
 Known bugs:
-- e(fx)clipse erzeugt noch kein korrektes Manifest-File (MANIFEST.MF) für JavaFX, überschreibt ein allfällig manuell erstelltes File sogar mit einem falschen File, darum erzeuge ich es ausserhalb Eclipse jeweils mit Netbeans.
 - Oracle JavaVM auf Linux x86 gibt einen leeren String im JavaFX-DragBoard. Auf Windows funktioniert das Drag+Drop hingegen einwandfrei. Darum hab ich als Workaround den String in einer Membervariable gehalten im File LineUp.java
 - JavaFX FileChooser crasht auf 64Bit-Windows. Darum hab ich den Swing-JFileChooser genommen. Sobald Bug bei JavaFX gefixt, wieder die JavaFX-Version nehmen für den FileChooser. ABER: auf Mac crasht der JFileChooser!!! Sollte momentan je nach Plattform dynamisch (zur Laufzeit) den entsprechenden FileChooser wählen!
 - JavaFX will zuerst .bss file laden (callstack), bevor .css. d.h. sollte mit "javafxpackager -createbss" die css-files konvertieren!
