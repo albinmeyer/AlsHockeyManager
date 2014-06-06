@@ -55,17 +55,6 @@ public class Transfer {
 	
 	public static final int TRANS_IMMEDIATELY_FACTOR = 2;
 	
-	private static final String L_IS_INTERESTED_IN = " is interested in ";
-	private static final String L_FOR_NEXT_SEASON = " for next season.";
-	private static final String L_IMMEDIATELY = " immediately";
-	private static final String L_SIGNS_AT = " signed at ";
-	private static final String L_OF = " of ";
-	private static final String L_TRADES_WITH = " trades with ";
-	private static final String L_REJECTS_YOUR_OFFER = "rejects your offer.";
-	private static final String L_ACCEPTS_YOUR_OFFER = "accepts your offer";
-	private static final String L_IS_NOT_INTERESTED_ANYMORE_IN = " is not interested anymore in ";
-	private static final String L_STAYS_AT = " stays at ";
-
 	private class Properties {
 		BitSet bitSet;
 

@@ -122,13 +122,8 @@ public class NewGame implements Initializable {
 	}
 	
 	private boolean needsFileChooserWorkaround() {
-        String osName = System.getProperty("os.name");
-        if(osName.indexOf("Mac") < 0) {
-        	// it's not a Mac, it needs a JFileChooser, because JavaFX FileChooser crashes at least on Win64
-        	return true;
-        } else {
-        	// on Mac, JFileChooser crasheds, needs JavaFX FileChooser
-        	return false;
-        }
+		// as of JavaFX 2.2, the JavaFX FileChooser did not work on all platforms
+		// but now on JavaFX 8, it works at least on Mac OS X 10.9.3 and Win8.1!
+		return false;
 	}
 }

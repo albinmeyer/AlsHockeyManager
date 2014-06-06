@@ -82,10 +82,6 @@ public class Player {
 	private static final String L_PLAYERLASTNAME = "Meyer";
 	private static final String L_PLAYERPERSONAL = "-";
 	private static final String L_PLAYERCAREER = "-";
-	private static final String L_SIGNED_AT = " signed at ";
-	private static final String L_OF = " of ";
-	private static final String L_BECOMES_FREE_AGENT = " becomes free agent.";
-	private static final String L_RETIRES = " retires.";
 
 	static BitSet idBar; // needed for generating ids
 

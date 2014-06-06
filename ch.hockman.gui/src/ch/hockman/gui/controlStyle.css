@@ -61,12 +61,12 @@
 
 #Content {
     -fx-background-color: derive(#838B8B,20%);
-    -fx-selection-bar: derive(-fx-background,-7%);
+    -fx-selection-bar: derive(#838B8B,-7%);
 }
 
 .menu-bar {
     -fx-background-color: derive(#838B8B,20%);
-    -fx-selection-bar: derive(-fx-background,-7%);
+    -fx-selection-bar: derive(#838B8B,-7%);
 }
 
 .menu-bar .label {

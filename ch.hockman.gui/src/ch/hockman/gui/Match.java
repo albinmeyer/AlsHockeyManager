@@ -125,7 +125,6 @@ public class Match implements Initializable {
 
 	private int interval;
 	private int nofMatches;
-	private boolean home;
 	private MatchTime mt;
 	private boolean done;
 	private boolean managedMatchDone;
