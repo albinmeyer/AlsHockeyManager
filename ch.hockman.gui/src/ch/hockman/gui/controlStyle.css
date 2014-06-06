@@ -1,5 +1,5 @@
 .root {
-	-fx-font: 14pt "Segoe UI Semibold";
+	-fx-font: 11pt "Segoe UI Semibold";
 }
 
 #AnchorPane { 
@@ -7,28 +7,28 @@
 }
 
 .radio-button {
-    -fx-font-size: 14pt;
+    -fx-font-size: 11pt;
     -fx-font-family: "Segoe UI Semibold";
     -fx-text-fill: black;
     -fx-opacity: 0.6;
 }
 
 .check-box {
-    -fx-font-size: 14pt;
+    -fx-font-size: 11pt;
     -fx-font-family: "Segoe UI Semibold";
     -fx-text-fill: black;
     -fx-opacity: 0.6;
 }
 
 .label {
-    -fx-font-size: 14pt;
+    -fx-font-size: 11pt;
     -fx-font-family: "Segoe UI Semibold";
     -fx-text-fill: black;
     -fx-opacity: 0.6;
 }
 
 .label-bright {
-    -fx-font-size: 14pt;
+    -fx-font-size: 11pt;
     -fx-font-family: "Segoe UI Semibold";
     -fx-text-fill: white;
     -fx-opacity: 1;
@@ -70,35 +70,34 @@
 }
 
 .menu-bar .label {
-    -fx-font-size: 14pt;
+    -fx-font-size: 12pt;
     -fx-font-family: "Segoe UI Semibold";
     -fx-text-fill: black;    
 }
 
 .menu-item .label{
-    -fx-font-size: 14pt;
+    -fx-font-size: 12pt;
     -fx-font-family: "Segoe UI Semibold";
     -fx-text-fill: black;    
 }
 
 .text-field .text-area .text-input {
-    -fx-font-size: 14pt;
+    -fx-font-size: 11pt;
     -fx-background-color: #4F94CD; /* SteelBlue4 */    
     -fx-font-family: "Segoe UI Semibold";
 }
 
 .text-area {
-    -fx-font-size: 14pt;
+    -fx-font-size: 11pt;
     -fx-background-color: #36648B; /* SteelBlue4 */    
     -fx-font-family: "Segoe UI Semibold";
 }
 
 .text-input {
-    -fx-font-size: 14pt;
+    -fx-font-size: 11pt;
     -fx-background-color: #36648B; /* SteelBlue4 */    
     -fx-font-family: "Segoe UI Semibold";
 }
-
 
 
 /* 
@@ -113,7 +112,7 @@
     -fx-background-radius: 0;
     -fx-background-color: #5E5E5E;
     -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
-    -fx-font-size: 14pt;
+    -fx-font-size: 11pt;
     -fx-text-fill: #d8d8d8;
     -fx-background-insets: 0 0 0 0, 0, 1, 2;
 }
@@ -152,6 +151,6 @@
 
 .sortListButton {
 	-fx-border-width: 1;
-	-fx-font: 12pt "Segoe UI Semibold";
+	-fx-font: 11pt "Segoe UI Semibold";
 	-fx-padding: 1 2 1 2;
 }
