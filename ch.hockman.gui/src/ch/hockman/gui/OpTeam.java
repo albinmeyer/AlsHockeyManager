@@ -26,7 +26,6 @@ import java.util.ResourceBundle;
 import ch.hockman.model.common.Util;
 import ch.hockman.model.player.Contracts;
 import ch.hockman.model.player.Player;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -75,10 +74,10 @@ public class OpTeam implements Initializable {
 	private Label sponsoringLbl;
 
 	@FXML
-	private ListView mainTeam;
+	private ListView<String> mainTeam;
 
 	@FXML
-	private ListView farmTeam;
+	private ListView<String> farmTeam;
 
 	@FXML
 	private Label mainTeamLabel;

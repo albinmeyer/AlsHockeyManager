@@ -76,28 +76,28 @@ public class Match implements Initializable {
 	private ImageView iceFieldImg;
 
 	@FXML
-	private ListView totomatList;
+	private ListView<String> totomatList;
 
 	@FXML
 	private TextArea scorerList;
 
 	@FXML
-	private ListView homeOnIceList;
+	private ListView<String> homeOnIceList;
 
 	@FXML
-	private ListView awayOnIceList;
+	private ListView<String> awayOnIceList;
 
 	@FXML
-	private ListView homePenList;
+	private ListView<String> homePenList;
 
 	@FXML
-	private ListView awayPenList;
+	private ListView<String> awayPenList;
 
 	@FXML
-	private ListView homeInjList;
+	private ListView<String> homeInjList;
 
 	@FXML
-	private ListView awayInjList;
+	private ListView<String> awayInjList;
 
 	@FXML
 	private Label oponentsLbl;
@@ -146,9 +146,9 @@ public class Match implements Initializable {
 		timeline = new Timeline();
 		timeline.setCycleCount(Timeline.INDEFINITE);
 		timeline.getKeyFrames().add(
-				new KeyFrame(Duration.millis(interval), new EventHandler() {
+				new KeyFrame(Duration.millis(interval), new EventHandler<ActionEvent>() {
 					// KeyFrame event handler
-					public void handle(Event event) {
+					public void handle(ActionEvent event) {
 						try {
 							second();
 						} catch (Throwable t) {

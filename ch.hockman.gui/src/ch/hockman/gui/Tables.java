@@ -28,7 +28,6 @@ import ch.hockman.model.Statistics;
 import ch.hockman.model.common.Util;
 import ch.hockman.model.team.Team;
 import ch.hockman.model.team.TeamPtrDivVector;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -65,7 +64,7 @@ public class Tables implements Initializable {
 	private Label lblDiv;
 
 	@FXML
-	private ListView table;
+	private ListView<String> table;
 
 	private int currDiv;
 

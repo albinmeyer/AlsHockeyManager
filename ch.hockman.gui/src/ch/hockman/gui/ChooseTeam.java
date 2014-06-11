@@ -48,7 +48,7 @@ import javafx.scene.input.MouseEvent;
 public class ChooseTeam implements Initializable {
 
 	@FXML
-	private ListView teamList;
+	private ListView<String> teamList;
 
 	@FXML
 	private Label leagueDataLbl; 

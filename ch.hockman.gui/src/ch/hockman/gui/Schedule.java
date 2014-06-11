@@ -27,7 +27,6 @@ import ch.hockman.model.Modus;
 import ch.hockman.model.Schedule.Result;
 import ch.hockman.model.common.Util;
 import ch.hockman.model.team.Team;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -52,7 +51,7 @@ public class Schedule implements Initializable {
 	private Label nextRoundLabel;
 
 	@FXML
-	private ListView scheduleList;
+	private ListView<String> scheduleList;
 
 	/**
 	 * Getting the model values needed for this scene from the global instance

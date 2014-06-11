@@ -24,7 +24,6 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 import ch.hockman.model.common.Util;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -88,7 +87,7 @@ public class Finances implements Initializable {
 	private Label cashNowLbl;
 
 	@FXML
-	private ChoiceBox youthDropDown;
+	private ChoiceBox<String> youthDropDown;
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {

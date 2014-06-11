@@ -27,7 +27,6 @@ import ch.hockman.model.common.Util;
 import ch.hockman.model.player.Player;
 import ch.hockman.model.position.Position;
 import ch.hockman.model.team.CoachAI;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -52,67 +51,67 @@ import javafx.scene.input.TransferMode;
 public class LineUp implements Initializable {
 
 	@FXML
-	private ListView playerTable;
+	private ListView<String> playerTable;
 
 	@FXML
-	private ListView defense1_55;
+	private ListView<String> defense1_55;
 
 	@FXML
-	private ListView defense2_55;
+	private ListView<String> defense2_55;
 
 	@FXML
-	private ListView defense3_55;
+	private ListView<String> defense3_55;
 
 	@FXML
-	private ListView offense1_55;
+	private ListView<String> offense1_55;
 
 	@FXML
-	private ListView offense2_55;
+	private ListView<String> offense2_55;
 
 	@FXML
-	private ListView offense3_55;
+	private ListView<String> offense3_55;
 
 	@FXML
-	private ListView offense4_55;
+	private ListView<String> offense4_55;
 
 	@FXML
-	private ListView line1_44;
+	private ListView<String> line1_44;
 
 	@FXML
-	private ListView line2_44;
+	private ListView<String> line2_44;
 
 	@FXML
-	private ListView line1_33;
+	private ListView<String> line1_33;
 
 	@FXML
-	private ListView line2_33;
+	private ListView<String> line2_33;
 
 	@FXML
-	private ListView line1_pp5;
+	private ListView<String> line1_pp5;
 
 	@FXML
-	private ListView line2_pp5;
+	private ListView<String> line2_pp5;
 
 	@FXML
-	private ListView line1_pp4;
+	private ListView<String> line1_pp4;
 
 	@FXML
-	private ListView line2_pp4;
+	private ListView<String> line2_pp4;
 
 	@FXML
-	private ListView line1_pk4;
+	private ListView<String> line1_pk4;
 
 	@FXML
-	private ListView line2_pk4;
+	private ListView<String> line2_pk4;
 
 	@FXML
-	private ListView line1_pk3;
+	private ListView<String> line1_pk3;
 
 	@FXML
-	private ListView line2_pk3;
+	private ListView<String> line2_pk3;
 
 	@FXML
-	private ListView goalies;
+	private ListView<String> goalies;
 
 	@FXML
 	private Label helpLbl;

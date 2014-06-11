@@ -29,7 +29,6 @@ import ch.hockman.model.Options;
 import ch.hockman.model.common.Util;
 import ch.hockman.model.player.Contracts;
 import ch.hockman.model.player.Motivation;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -52,10 +51,10 @@ public class NewContract implements Initializable {
 	private Label prolongueLbl;
 
 	@FXML
-	private ChoiceBox yearsChoice;
+	private ChoiceBox<Integer> yearsChoice;
 
 	@FXML
-	private ChoiceBox wageChoice;
+	private ChoiceBox<String> wageChoice;
 
 	@FXML
 	private Button okBtn;

@@ -29,7 +29,6 @@ import ch.hockman.model.Transfer;
 import ch.hockman.model.common.Util;
 import ch.hockman.model.player.Player;
 import ch.hockman.model.player.PlayerPtrVector;
-
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -83,13 +82,13 @@ public class MakeOffer implements Initializable {
 	private ToggleGroup transferTime;
 
 	@FXML
-	private ChoiceBox contractChoice;
+	private ChoiceBox<Integer> contractChoice;
 
 	@FXML
-	private ChoiceBox wageChoice;
+	private ChoiceBox<String> wageChoice;
 
 	@FXML
-	private ChoiceBox tradeChoice;
+	private ChoiceBox<String> tradeChoice;
 
 	@FXML
 	private VBox cashGroupBox;
@@ -119,6 +118,8 @@ public class MakeOffer implements Initializable {
 		tradingAgainstLbl.setText(Util.getModelResourceBundle().getString("L_TRADING_AGAINST"));
 		nextTxt.setText(Util.getModelResourceBundle().getString("L_NEXT_CASH"));
 		immTxt.setText(Util.getModelResourceBundle().getString("L_THIS_CASH"));
+		immediatelyRadio.setText(Util.getModelResourceBundle().getString("L_IMMEDIATELY"));
+		nextSeasonRadio.setText(Util.getModelResourceBundle().getString("L_NEXT_SEASON"));
 		if (tradeEnabled) {
 			immTxt.setText(Util.getModelResourceBundle().getString("L_THIS_TRADE"));
 			// show all my players in the combo
@@ -171,9 +172,9 @@ public class MakeOffer implements Initializable {
 
 		transferTime.selectToggle(transferTime.getToggles().get(1)); // next
 																		// season
-		transferTime.selectedToggleProperty().addListener(new ChangeListener() {
+		transferTime.selectedToggleProperty().addListener(new ChangeListener<Object>() {
 			@Override
-			public void changed(ObservableValue arg0, Object arg1, Object arg2) {
+			public void changed(ObservableValue<?> arg0, Object arg1, Object arg2) {
 				RadioButton rb = ((RadioButton) transferTime
 						.getSelectedToggle());
 				String s = Util.getModelResourceBundle().getString("L_FEE");

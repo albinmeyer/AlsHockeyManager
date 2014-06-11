@@ -87,7 +87,7 @@ public class Stats implements Initializable {
 	private ToggleGroup positionGrp;
 
 	@FXML
-	private ListView statsList;
+	private ListView<String> statsList;
 
 	@FXML
 	private RadioButton goalieRadio;
@@ -114,8 +114,8 @@ public class Stats implements Initializable {
 		}
 		this.showGoalies = false;
 		positionGrp.selectToggle(positionGrp.getToggles().get(1));
-		positionGrp.selectedToggleProperty().addListener(new ChangeListener() {
-			public void changed(ObservableValue arg0, Object arg1, Object arg2) {
+		positionGrp.selectedToggleProperty().addListener(new ChangeListener<Object>() {
+			public void changed(ObservableValue<?> arg0, Object arg1, Object arg2) {
 				RadioButton rb = ((RadioButton) positionGrp.getSelectedToggle());
 				if (rb.equals(goalieRadio)) {
 					showGoalies = true;

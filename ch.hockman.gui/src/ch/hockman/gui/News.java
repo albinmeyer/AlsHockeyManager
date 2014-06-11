@@ -25,7 +25,6 @@ import java.util.ResourceBundle;
 
 import ch.hockman.model.Modus;
 import ch.hockman.model.common.Util;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -50,7 +49,7 @@ public class News implements Initializable {
 	private TextArea transferList;
 
 	@FXML
-	private ListView matchList;
+	private ListView<String> matchList;
 
 	@FXML
 	private Label nextRoundLbl;

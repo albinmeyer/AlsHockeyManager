@@ -28,7 +28,6 @@ import ch.hockman.model.Transfer;
 import ch.hockman.model.common.Util;
 import ch.hockman.model.player.Player;
 import ch.hockman.model.team.CoachAI;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -53,10 +52,10 @@ public class CurrentNegot implements Initializable {
 	private Label buyingNegLbl;
 	
 	@FXML
-	private ListView offersList;
+	private ListView<String> offersList;
 
 	@FXML
-	private ListView buyingList;
+	private ListView<String> buyingList;
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {

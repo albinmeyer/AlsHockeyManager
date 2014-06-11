@@ -28,7 +28,6 @@ import ch.hockman.model.common.Util;
 import ch.hockman.model.player.Contracts;
 import ch.hockman.model.player.Player;
 import ch.hockman.model.team.CoachAI;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -52,10 +51,10 @@ public class Roster implements Initializable {
 	private boolean mainTeamListActive = true;
 
 	@FXML
-	private ListView mainTeam;
+	private ListView<String> mainTeam;
 
 	@FXML
-	private ListView farmTeam;
+	private ListView<String> farmTeam;
 
 	@FXML
 	private Label mainTeamLabel;

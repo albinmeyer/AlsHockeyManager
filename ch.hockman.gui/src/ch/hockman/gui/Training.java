@@ -45,28 +45,28 @@ import ch.hockman.model.common.Util;
 public class Training implements Initializable {
 
 	@FXML
-	private ChoiceBox shootingDropDown;
+	private ChoiceBox<String> shootingDropDown;
 
 	@FXML
-	private ChoiceBox staminaDropDown;
+	private ChoiceBox<String> staminaDropDown;
 
 	@FXML
-	private ChoiceBox skillDropDown;
+	private ChoiceBox<String> skillDropDown;
 
 	@FXML
-	private ChoiceBox passingDropDown;
+	private ChoiceBox<String> passingDropDown;
 
 	@FXML
-	private ChoiceBox powerDropDown;
+	private ChoiceBox<String> powerDropDown;
 
 	@FXML
-	private ChoiceBox offensivePlayDropDown;
+	private ChoiceBox<String> offensivePlayDropDown;
 
 	@FXML
-	private ChoiceBox defensivePlayDropDown;
+	private ChoiceBox<String> defensivePlayDropDown;
 
 	@FXML
-	private ChoiceBox mentalDropDown;
+	private ChoiceBox<String> mentalDropDown;
 
 	@FXML
 	private Label avShootingLbl;

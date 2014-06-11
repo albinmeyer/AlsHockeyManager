@@ -26,7 +26,6 @@ import java.util.ResourceBundle;
 import ch.hockman.model.League;
 import ch.hockman.model.common.Util;
 import ch.hockman.model.player.Player;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -46,7 +45,7 @@ import javafx.scene.input.MouseEvent;
 public class NextSeasonRoster implements Initializable {
 
 	@FXML
-	private ListView nextRoster;
+	private ListView<String> nextRoster;
 
 	private League league;
 

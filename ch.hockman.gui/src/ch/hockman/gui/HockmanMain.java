@@ -105,12 +105,12 @@ public class HockmanMain extends Application {
 		return s;
 	}
 
-	public static void setListViewCellFactory(ListView lv) {
+	public static void setListViewCellFactory(ListView<String> lv) {
 		lv.setCellFactory(new Callback<ListView<String>, ListCell<String>>() {
 			@Override
 			public ListCell<String> call(ListView<String> list) {
-				ListCell lc = new TextFieldListCell();
-				lc.setFont(Font.font(java.awt.Font.MONOSPACED, 16));
+				ListCell<String> lc = new TextFieldListCell();
+				lc.setFont(Font.font("Monospaced", 16));
 				lc.setPrefHeight(25);
 				return lc;
 			}

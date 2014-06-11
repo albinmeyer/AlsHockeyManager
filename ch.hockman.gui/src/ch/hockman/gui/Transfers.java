@@ -50,7 +50,7 @@ public class Transfers implements Initializable {
 	private Label cashAvailableLbl;
 
 	@FXML
-	private ListView playerList;
+	private ListView<String> playerList;
 
 	private PlayerPtrVector ppv;
 
