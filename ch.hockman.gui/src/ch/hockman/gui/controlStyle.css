@@ -6,6 +6,10 @@
     -fx-background-color: #838B8B;
 }
 
+.choice-box {
+    -fx-font-size: 11pt;
+}
+
 .radio-button {
     -fx-font-size: 11pt;
     -fx-font-family: "Segoe UI Semibold";
@@ -35,10 +39,14 @@
 }
 
 .label-header {
-    -fx-font-size: 32pt;
+    -fx-font-size: 12pt;
     -fx-font-family: "Segoe UI Light";
     -fx-text-fill: white;
     -fx-opacity: 1;
+}
+
+.list-view {
+    -fx-background-color: #36648B; /* SteelBlue4 */
 }
 
 .list-cell:filled:selected:focused, .list-cell:filled:selected {
@@ -93,12 +101,26 @@
     -fx-font-family: "Segoe UI Semibold";
 }
 
+.text-area .scroll-pane {
+    -fx-background-color: #9AB1C5;
+    -fx-text-fill: white;
+}
+
+.text-area .scroll-pane .viewport {
+    -fx-background-color: #9AB1C5;
+    -fx-text-fill: white;
+}
+
+.text-area .scroll-pane .content {
+    -fx-background-color: #9AB1C5;
+    -fx-text-fill: white;
+}
+
 .text-input {
     -fx-font-size: 11pt;
     -fx-background-color: #36648B; /* SteelBlue4 */    
     -fx-font-family: "Segoe UI Semibold";
 }
-
 
 /* 
  * Metro style Push Button

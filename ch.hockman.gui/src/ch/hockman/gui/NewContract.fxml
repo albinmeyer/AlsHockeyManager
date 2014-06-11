@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <!--
  This file is part of Al's Hockey Manager
  Copyright (C) 1998-2012 Albin Meyer
@@ -16,6 +17,7 @@
  You should have received a copy of the GNU General Public License
  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
+
 <?language javascript?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -24,7 +26,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.paint.*?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml" fx:controller="ch.hockman.gui.NewContract">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="ch.hockman.gui.NewContract">
   <children>
     <VBox prefHeight="600.0" prefWidth="800.0" spacing="30.0">
       <children>
@@ -32,7 +34,7 @@
         <Label text="Proposal" />
         <HBox alignment="CENTER" prefHeight="50.0" prefWidth="411.0" spacing="20.0">
           <children>
-            <VBox prefHeight="50.0" prefWidth="229.0">
+            <VBox prefHeight="50.0" prefWidth="229.0" spacing="10.0">
               <children>
                 <Label fx:id="contractYearsTxtLbl" text="Contract Years" />
                 <Label fx:id="wageTxtLbl" text="Wage" />
