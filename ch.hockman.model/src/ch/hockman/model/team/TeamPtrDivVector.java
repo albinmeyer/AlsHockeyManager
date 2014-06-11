@@ -184,14 +184,8 @@ public class TeamPtrDivVector {
 
 	public void sortByTeamRank() {
 		for (int i = 0; i < nofDivision; i++) {
-			Collections.sort(divVector.get(i), new Comparator<Team>() {
-
-				@Override
-				public int compare(Team t1, Team t2) {
-					return t1.getStatistics().getRank()
-							- t2.getStatistics().getRank();
-				}
-			});
+			Collections.sort(divVector.get(i), (Team t1, Team t2) -> t1.getStatistics().getRank()
+							- t2.getStatistics().getRank());
 		}
 	}
 }

@@ -83,149 +83,87 @@ public class PlayerPtrVector {
 	}
 
 	public void SortPlayerFirstName() {
-		Collections.sort(playerVector, new Comparator<Player>() {
-
-			@Override
-			public int compare(Player p1, Player p2) {
-				return p1.getFirstName().compareTo(p2.getFirstName());
-			}
-		});
+		Collections.sort(playerVector, (Player p1, Player p2) -> p1.getFirstName().compareTo(p2.getFirstName()));
 	}
 
 	public void SortPlayerLastName() {
-		Collections.sort(playerVector, new Comparator<Player>() {
-
-			@Override
-			public int compare(Player p1, Player p2) {
-				return p1.getLastName().compareTo(p2.getLastName());
-			}
-		});
+		Collections.sort(playerVector, (Player p1, Player p2) -> p1.getLastName().compareTo(p2.getLastName()));
 	}
 
 	public void SortPlayerPos() {
-		Collections.sort(playerVector, new Comparator<Player>() {
-
-			@Override
-			public int compare(Player p1, Player p2) {
-				return p1.getPosition().getPosID()
-						.compareTo(p2.getPosition().getPosID());
-			}
-		});
+		Collections.sort(playerVector, (Player p1, Player p2) -> p1.getPosition().getPosID()
+						.compareTo(p2.getPosition().getPosID()));
 	}
 
 	public void SortPlayerNumber() {
-		Collections.sort(playerVector, new Comparator<Player>() {
-
-			@Override
-			public int compare(Player p1, Player p2) {
-				return p1.getNumber() - p2.getNumber();
-			}
-		});
+		Collections.sort(playerVector, (Player p1, Player p2) -> p1.getNumber() - p2.getNumber());
 	}
 
 	public void SortPlayerNation() {
-		Collections.sort(playerVector, new Comparator<Player>() {
-
-			@Override
-			public int compare(Player p1, Player p2) {
-				return p1.getNation().getName()
-						.compareTo(p2.getNation().getName());
-			}
-		});
+		Collections.sort(playerVector, (Player p1, Player p2) -> p1.getNation().getName()
+						.compareTo(p2.getNation().getName()));
 	}
 
 	public void SortPlayerAge() {
-		Collections.sort(playerVector, new Comparator<Player>() {
-
-			@Override
-			public int compare(Player p1, Player p2) {
-				return p1.getAge() - p2.getAge();
-			}
-		});
+		Collections.sort(playerVector, (Player p1, Player p2) -> p1.getAge() - p2.getAge());
 	}
 
 	public void SortPlayerOwner() {
-		Collections.sort(playerVector, new Comparator<Player>() {
-
-			@Override
-			public int compare(Player p1, Player p2) {
+		Collections.sort(playerVector, (Player p1, Player p2) -> {
 				String teamName1 = p1.getContracts().getCurrContr().getTeamName();
 				String teamName2 = p2.getContracts().getCurrContr().getTeamName();
 				return teamName1.compareTo(teamName2);
 			}
-		});
+		);
 	}
 
 	public void SortPlayerId() {
-		Collections.sort(playerVector, new Comparator<Player>() {
-
-			@Override
-			public int compare(Player p1, Player p2) {
+		Collections.sort(playerVector, (Player p1, Player p2) -> {
 				int playerId1 = p1.getId();
 				int playerId2 = p2.getId();
 				return playerId1 - playerId2;
 			}
-		});
+		);
 	}
 	
 	public void SortPlayerContract() {
-		Collections.sort(playerVector, new Comparator<Player>() {
-
-			@Override
-			public int compare(Player p1, Player p2) {
+		Collections.sort(playerVector, (Player p1, Player p2) -> {
 				return p1.getContracts().getCurrContrYears()
 						- p2.getContracts().getCurrContrYears();
 			}
-		});
+		);
 	}
 
 	public void SortPlayerNextSeason() {
-		Collections.sort(playerVector, new Comparator<Player>() {
-
-			@Override
-			public int compare(Player p1, Player p2) {
+		Collections.sort(playerVector, (Player p1, Player p2) -> {
 				String teamName1 = p1.getContracts().getNextContr().getTeamName();
 				String teamName2 = p2.getContracts().getNextContr().getTeamName();
 				return teamName1.compareTo(teamName2);
 			}
-		});
+		);
 	}
 
 	public void SortPlayerFee() {
-		Collections.sort(playerVector, new Comparator<Player>() {
-
-			@Override
-			public int compare(Player p1, Player p2) {
+		Collections.sort(playerVector, (Player p1, Player p2) -> {
 				return p1.getFee() - p2.getFee();
 			}
-		});
+		);
 	}
 
 	public void SortPlayerWage() {
-		Collections.sort(playerVector, new Comparator<Player>() {
-
-			@Override
-			public int compare(Player p1, Player p2) {
+		Collections.sort(playerVector, (Player p1, Player p2) -> {
 				return p1.getWage() - p2.getWage();
 			}
-		});
+		);
 	}
 
 	public void SortPlayerInjury() {
-		Collections.sort(playerVector, new Comparator<Player>() {
-
-			@Override
-			public int compare(Player p1, Player p2) {
-				return p1.getHealth().getInjury() - p2.getHealth().getInjury();
-			}
-		});
+		Collections.sort(playerVector, (Player p1, Player p2) -> 
+				p1.getHealth().getInjury() - p2.getHealth().getInjury());
 	}
 
 	public void SortPlayerGoals() {
-		Collections.sort(playerVector, new Comparator<Player>() {
-
-			@Override
-			public int compare(Player p1, Player p2) {
+		Collections.sort(playerVector, (Player p1, Player p2) -> {
 				if (p1.getPosition().getPosID() == Position.PosID.GOALIE) {
 					if (p2.getPosition().getPosID() == Position.PosID.GOALIE) {
 						int shots = p1.getAssists() + p1.getGoals();
@@ -249,14 +187,11 @@ public class PlayerPtrVector {
 					return p2.getGoals() - p1.getGoals();
 				}
 			}
-		});
+		);
 	}
 
 	public void SortPlayerAssists() {
-		Collections.sort(playerVector, new Comparator<Player>() {
-
-			@Override
-			public int compare(Player p1, Player p2) {
+		Collections.sort(playerVector, (Player p1, Player p2) -> {
 				if (p1.getPosition().getPosID() == Position.PosID.GOALIE) {
 					if (p2.getPosition().getPosID() == Position.PosID.GOALIE) {
 						int shots = p1.getAssists() + p1.getGoals();
@@ -280,14 +215,11 @@ public class PlayerPtrVector {
 					return p2.getAssists() - p1.getAssists();
 				}
 			}
-		});
+		);
 	}
 
 	public void SortPlayerPoints() {
-		Collections.sort(playerVector, new Comparator<Player>() {
-
-			@Override
-			public int compare(Player p1, Player p2) {
+		Collections.sort(playerVector, (Player p1, Player p2) -> {
 				if (p1.getPosition().getPosID() == Position.PosID.GOALIE) {
 					if (p2.getPosition().getPosID() == Position.PosID.GOALIE) {
 						int shots = p1.getAssists() + p1.getGoals();
@@ -312,72 +244,34 @@ public class PlayerPtrVector {
 							- p1.getGoals();
 				}
 			}
-		});
+		);
 	}
 
 	public void SortPlayerPlusMinus() {
-		Collections.sort(playerVector, new Comparator<Player>() {
-
-			@Override
-			public int compare(Player p1, Player p2) {
-				return p2.getPlusMinus() - p1.getPlusMinus();
-			}
-		});
+		Collections.sort(playerVector, (Player p1, Player p2) -> p2.getPlusMinus() - p1.getPlusMinus());
 	}
 
 	public void SortPlayerPenalty() {
-		Collections.sort(playerVector, new Comparator<Player>() {
-
-			@Override
-			public int compare(Player p1, Player p2) {
-				return p2.getPenalty() - p1.getPenalty();
-			}
-		});
+		Collections.sort(playerVector, (Player p1, Player p2) -> p2.getPenalty() - p1.getPenalty());
 	}
 
 	public void SortPlayerStrength() {
-		Collections.sort(playerVector, new Comparator<Player>() {
-
-			@Override
-			public int compare(Player p1, Player p2) {
-				return p2.getTotalStrength() - p1.getTotalStrength();
-			}
-		});
+		Collections.sort(playerVector, (Player p1, Player p2) -> p2.getTotalStrength() - p1.getTotalStrength());
 	}
 
 	public void SortPlayerStrengthWithoutEnergy() {
 		// for national team
-		Collections.sort(playerVector, new Comparator<Player>() {
-
-			@Override
-			public int compare(Player p1, Player p2) {
-				return p2.getTotalStrengthWithoutEnergy()
-						- p1.getTotalStrengthWithoutEnergy();
-			}
-		});
+		Collections.sort(playerVector, (Player p1, Player p2) -> p2.getTotalStrengthWithoutEnergy()
+						- p1.getTotalStrengthWithoutEnergy());
 	}
 
 	public void SortPlayerWeakness() {
 		// for lineup KI
-		Collections.sort(playerVector, new Comparator<Player>() {
-
-			@Override
-			public int compare(Player p1, Player p2) {
-				return p1.getTotalStrength() - p2.getTotalStrength();
-			}
-		});
-
+		Collections.sort(playerVector, (Player p1, Player p2) -> p1.getTotalStrength() - p2.getTotalStrength());
 	}
 
 	public void SortPlayerBest() {
 		// for match best player
-		Collections.sort(playerVector, new Comparator<Player>() {
-
-			@Override
-			public int compare(Player p1, Player p2) {
-				return p2.getBestPlayerPoints() - p1.getBestPlayerPoints();
-			}
-		});
-
+		Collections.sort(playerVector, (Player p1, Player p2) -> p2.getBestPlayerPoints() - p1.getBestPlayerPoints());
 	}
 }
