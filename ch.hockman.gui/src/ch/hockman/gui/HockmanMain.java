@@ -39,13 +39,15 @@ import ch.hockman.model.team.Team;
  *
  */
 public class HockmanMain extends Application {
-	// javafx hack: must use those "global" variables
 	static public StageHandler stageHandler; // I found no other way for
 												// switching between multiple
 												// scenes
 	
 	// Ugly hack, but I found no other way for providing the model to the gui
 	// imho, it's a weakness of the JavaFX 2.2 framework.
+	// as a solution, I should probably use the afterburner.fx DI-Framework?
+	// see also
+	// http://stackoverflow.com/questions/20389567/how-to-initialize-javafx-controllers-with-the-same-model-object
 	static public Game game;
 	static public Team currManagedTeam;
 	static public boolean modified; // asking for saving at quit/new/load only
